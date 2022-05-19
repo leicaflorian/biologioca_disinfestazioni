@@ -1,0 +1,132 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+
+.section {
+  --section-padding: 10vh;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+
+  .bg-jumbotron {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.bg-end-75 {
+      left: 25%;
+      top: -2.5rem;
+      bottom: calc(0px - var(--section-padding));
+
+      &.bg-offset-top{
+        top: calc(0px - var(--section-padding));
+      }
+
+      @include media-breakpoint-down('md') {
+        position: relative;
+        left: -1rem;
+        width: calc(100% + 2rem);
+        top: 0;
+        bottom: 0;
+        margin-bottom: -5rem;
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .section-title {
+    font-family: 'Roboto Slab', sans-serif;
+    margin-bottom: 2.5rem;
+  }
+
+  .lead {
+    margin-bottom: 2rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    --section-padding: 18vh;
+  }
+}
+
+.section-jumbotron {
+}
+
+.section-dark {
+  --bs-heading-color: white;
+  color: white;
+}
+
+.section-bg-leafs {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background-image: url("../../assets/section_bg_leafs.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+}
+
+.offset-img-container {
+  position: relative;
+  height: 100%;
+
+  img {
+    position: absolute;
+    width: 80%;
+    min-height: 90%;
+    object-fit: cover;
+
+    &:first-child {
+      top: calc(0px - var(--section-padding));
+      left: 0;
+    }
+
+    &:last-child {
+      bottom: calc(0px - var(--section-padding));
+      right: 0;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    & {
+      min-height: 350px;
+
+      img {
+        &:first-child {
+        }
+
+        &:last-child {
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    & {
+      min-height: 250px;
+
+      img {
+        width: 90%;
+        aspect-ratio: 16/9;
+      }
+    }
+  }
+}

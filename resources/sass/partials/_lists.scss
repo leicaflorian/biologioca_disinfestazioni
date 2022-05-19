@@ -1,0 +1,18 @@
+.list-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.list-item-with-icon {
+  //padding: 1rem 0;
+  //margin-top: -1rem;
+  //margin-bottom: -1rem;
+
+  a {
+    gap: 1rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+}

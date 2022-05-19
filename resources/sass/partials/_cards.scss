@@ -1,0 +1,90 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+
+.card {
+  --bs-card-border-radius: 0;
+}
+
+.card-service {
+  --bs-border-color: #d9e9e5;
+  --bs-border-color-translucent: #d9e9e5;
+  --bs-card-inner-border-radius: 0;
+  text-decoration: none;
+
+  .card-img-top {
+    overflow: hidden;
+
+    img {
+      aspect-ratio: 16/8;
+      width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: transform var(--my-transition-duration-slow) ease-in-out;
+    }
+
+  }
+
+  .card-body {
+    --bs-card-spacer-y: 2rem;
+    --bs-card-spacer-x: 2rem;
+    --bs-heading-color: var(--bs-secondary);
+    text-align: center;
+
+    .card-title {
+      font-family: var(--titles-font-family);
+    }
+  }
+
+  &:hover {
+    .card-img-top img {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.card-badge {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  img {
+    width: 60px;
+  }
+
+  .card-badge-text {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--bs-secondary);
+  }
+}
+
+.card-jumbotron {
+  --bs-border-color: #d9e9e5;
+  --bs-border-color-translucent: #d9e9e5;
+  --bs-card-inner-border-radius: 0;
+
+  .card-title {
+    font-family: var(--titles-font-family);
+  }
+
+  .card-body {
+    --bs-card-spacer-y: 5rem;
+    --bs-card-spacer-x: 3rem;
+
+    @include media-breakpoint-down('md') {
+      --bs-card-spacer-y: 3rem;
+      --bs-card-spacer-x: 1rem;
+    }
+  }
+}
+
+.card-why-us {
+  --bs-border-color: #d9e9e5;
+  --bs-border-color-translucent: #d9e9e5;
+  --bs-card-inner-border-radius: 0;
+
+  .card-body {
+    --bs-card-spacer-y: 3rem;
+    --bs-card-spacer-x: 3rem;
+  }
+}

@@ -1,0 +1,13 @@
+:root {
+  --titles-font-family: 'Roboto slab', sans-serif;
+  --font-family: 'Roboto', sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-heading-color: var(--bs-dark);
+  --bs-border-color: #d9e9e5;
+  --bs-darker: #{$darker};
+  --bs-body-font-weight: 400;
+
+  --my-transition-duration-fast: .15s;
+  --my-transition-duration: .3s;
+  --my-transition-duration-slow: .6s;
+}

@@ -1,0 +1,60 @@
+.btn {
+  text-transform: uppercase;
+  background-color: transparent !important;
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bs-btn-bg);
+    transition: height var(--my-transition-duration) ease-in-out;
+    z-index: -1;
+  }
+
+  &:hover {
+    &:before {
+      height: 0;
+    }
+  }
+}
+
+[class*="btn-outline"] {
+  &:before {
+    height: 0;
+  }
+
+  &:hover {
+    &:before {
+      height: 100%;
+    }
+  }
+}
+
+.btn-outline-light {
+  --bs-btn-hover-color: var(--bs-primary);
+  --bs-btn-bg: #fff;
+
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: var(--bs-primary);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+}
+
+.btn-outline-primary{
+  --bs-btn-hover-color: #fff;
+  --bs-btn-bg: var(--bs-primary);
+}
+
+.btn-to-light {
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: #fff;
+}

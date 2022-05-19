@@ -1,0 +1,55 @@
+.icon-rounded {
+  border-radius: 50%;
+  color: inherit;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-white {
+  background-color: #fff;
+  color: var(--bs-primary);
+}
+
+.icon-outline {
+  background-color: transparent;
+  border: 1px solid;
+  color: inherit;
+
+  .icon-white {
+    border-color: #fff;
+  }
+}
+
+.icon-primary {
+  background-color: var(--bs-primary);
+  color: white;
+}
+
+.icon-lg {
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.3rem;
+}
+
+.icon-rounded-offset {
+  position: relative;
+  z-index: 0;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50%;
+    left: -60%;
+    bottom: 20%;
+    background: var(--bs-light);
+    filter: brightness(0.98);
+    z-index: -1;
+  }
+}
