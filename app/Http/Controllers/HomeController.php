@@ -14,11 +14,9 @@ class HomeController extends Controller {
    */
   function index(): View|Factory|Application {
     $featuredServices = Service::where('featured', 1)->orderBy("order", "asc")->get();
-    $menuEntries = Service::where('has_page', 1)->orderBy("title")->get();
    
     return view('index', [
       'featuredServices' => $featuredServices,
-      'menuEntries' => $menuEntries
     ]);
   }
   

@@ -1,13 +1,14 @@
 @extends("layouts.main")
 
 @section("page-title", $service->name)
+@section("page-description", $service->description_short)
 
 @section("content")
   <div class="section">
     <div class="container">
       <div class="section-jumbotron position-relative">
         <div class="bg-jumbotron bg-end-75 bg-offset-top">
-          <img src="{{$service->img_cover}}" alt="{{$service->img_cover_alt}}">
+          <img src="{{asset("storage/" . $service->img_cover)}}" alt="{{$service->img_cover_alt}}">
         </div>
 
         <div class="row">

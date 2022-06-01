@@ -16,11 +16,9 @@ class ServiceController extends Controller {
    * @return Application|Factory|View
    */
   function index(): View|Factory|Application {
-    $menuEntries = Service::where('has_page', 1)->orderBy("title")->get();
     $services    = Service::orderBy("order")->get();
     
     return view('services.index', [
-      'menuEntries' => $menuEntries,
       'services'    => $services
     ]);
   }
@@ -34,14 +32,10 @@ class ServiceController extends Controller {
    */
   function details($service): View|Factory|Application {
     $service       = Service::where('slug', $service)->first();
-    $menuEntries   = Service::where('has_page', 1)->orderBy("title")->get();
     $otherServices = Service::where('slug', '!=', $service->slug)
       ->where("has_page", 1)->inRandomOrder()->limit(3)->get();
   
-//    dump(Route::current()->parameters["service"]);
-    
     return view('services.details', [
-      'menuEntries'   => $menuEntries,
       'service'       => $service,
       'otherServices' => $otherServices
     ]);

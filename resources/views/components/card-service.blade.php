@@ -5,7 +5,7 @@
 
 <{{$tag}} class="card card-service h-100" href="{{route('services.details', $service->slug)}}">
 <div class="card-img-top">
-  <img src="{{asset($service->img_cover_low_res)}}" alt="{{$service->img_cover_alt}}">
+  <img src="{{$service->getFirstMediaUrl("img_cover", "thumb_600")}}" alt="{{$service->img_cover_alt}}">
 </div>
 
 <div class="card-body">

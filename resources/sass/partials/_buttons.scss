@@ -58,3 +58,7 @@
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-border-color: #fff;
 }
+
+.btn-danger{
+  --bs-btn-hover-color: var(--bs-danger);
+}

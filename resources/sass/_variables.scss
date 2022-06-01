@@ -1,7 +1,30 @@
 // Body
-$body-bg: #f8fafc;
+
+$primary: #2da884;
+$secondary: #637a75;
+$light: #f7fcfa;
+$dark: #142a25;
+$darker: #0c1b17;
+
+$border-color: #d9e9e5;
+$border-color-translucent: rgba($border-color, .175);
+
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-size-base: 1rem;
 $line-height-base: 1.6;
+$headings-color: $dark;
+
+$h1-font-size: $font-size-base * 3.5;
+$h2-font-size: $font-size-base * 3;
+$h3-font-size: $font-size-base * 2.75;
+$h4-font-size: $font-size-base * 2.5;
+$h5-font-size: $font-size-base * 2.25;
+$h6-font-size: $font-size-base * 1.5;
+
+// Buttons
+$btn-padding-y: 1.625rem;
+$btn-padding-x: 2.875rem;
+$btn-border-radius: 0;
+$btn-font-size: 1.125rem;

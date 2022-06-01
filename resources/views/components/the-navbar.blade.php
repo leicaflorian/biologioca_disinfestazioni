@@ -17,11 +17,12 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle {{str_starts_with(Route::currentRouteName(), "services") ? 'active' : null }}"
-             id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+             id="navbarDropdown" role="button"
+             data-bs-toggle="dropdown"
              aria-expanded="false">
             Servizi
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
             @foreach($menuEntries as $entry)
               <li>
                 <a class="dropdown-item {{ key_exists("service", Route::current()->parameters) && Route::current()->parameters["service"] === $entry->slug ? 'active': null }}"
@@ -38,6 +39,43 @@
           <a class="nav-link {{Route::currentRouteName() === 'contacts.index' ? 'active' : null }}"
              href="{{route('contacts.index')}}">Contatti</a>
         </li>
+
+        @auth
+          <li class="nav-item dropdown">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+               data-bs-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+              {{ Auth::user()->name }}
+            </a>
+
+            <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item {{Route::currentRouteName() === 'admin' ? 'active' : null }}"
+                   href="{{route('admin.home')}}">Home</a>
+              </li>
+              {{-- Servizi --}}
+              <li>
+                <a class="dropdown-item {{Route::currentRouteName() === 'admin.services.index' ? 'active' : null }}"
+                   href="{{route('admin.services.index')}}">Gestione Servizi</a>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li>
+                <form action="{{ route('logout') }}" method="POST" class="">
+                  @csrf
+                  <button class="dropdown-item text-uppercase">
+                    Logout
+                  </button>
+                </form>
+              </li>
+
+
+            </ul>
+          </li>
+        @endauth
       </ul>
 
     </div>

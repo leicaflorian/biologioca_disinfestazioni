@@ -1,8 +1,20 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700%7CRoboto+Slab:regular,500,700');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@import "./css_variables";
+@import "./partials/generic";
+@import "./partials/icons";
+@import "./partials/lists";
+@import "./partials/buttons";
+@import "./partials/sections";
+@import "./partials/navbar";
+@import "./partials/cards";
+@import "./partials/footer";
+@import "./partials/forms";
