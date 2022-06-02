@@ -32,6 +32,11 @@
               <i class="fa-brands fa-facebook-f icon-rounded icon-outline icon-white icon-lg"
                  style="font-size: 1.5rem"></i>
             </a>
+            <a href="https://www.youtube.com/channel/UCKT3azjz_wsuc69Xi-9FTXw" target="_blank" data-aos="fade-left"
+               data-aos-delay="200" class="d-inline-flex">
+              <i class="fa-brands fa-youtube icon-rounded icon-outline icon-white icon-lg"
+                 style="font-size: 1.5rem"></i>
+            </a>
           </div>
         </div>
       </div>
