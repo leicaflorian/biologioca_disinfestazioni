@@ -126,5 +126,25 @@ return [
         ],
     ],
 
+    'contact' => [
+        'title' => 'Contacts',
+
+        'actions' => [
+            'index' => 'Contacts',
+            'create' => 'New Contact',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'name' => 'Name',
+            'email' => 'Email',
+            'service_id' => 'Service',
+            'phone' => 'Phone',
+            'message' => 'Message',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

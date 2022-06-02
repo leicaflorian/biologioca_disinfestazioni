@@ -14,16 +14,10 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <meta property="og:title" content="@yield("page-title") | Biologica Disinfestazioni - Professionisti nella provincia di Vicenza, Treviso e Padova">
-  <meta property="og:site_name" content="Biologica Disinfestazioni - Professionisti nella provincia di Vicenza, Treviso e Padova">
-  <meta property="og:url" content="https://www.biologicadisinfestazioni.it/">
-  <meta property="og:description" content="@yield("page-description")">
-  <meta property="og:type" content="@yield("og_type", 'website')">
-  <meta property="og:image"
-        content='url("https://uploads-ssl.webflow.com/61af21b02799774300900f28/61b0a8da69101e54ca38adb9_Hero%20Donna%20e%20bimba.jpg")'>
-
   <title>@yield("page-title") | Biologica Disinfestazioni</title>
   <meta name="description" content="@yield("page-description")">
+
+  @include("components.social-media-tags")
 
   @include("components.ldJson")
 

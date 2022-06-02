@@ -88,3 +88,17 @@ $factory->define(App\Models\Video::class, static function (Faker\Generator $fake
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Contact::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'email' => $faker->email,
+        'service_id' => $faker->sentence,
+        'phone' => $faker->sentence,
+        'message' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

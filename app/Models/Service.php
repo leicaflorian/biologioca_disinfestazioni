@@ -85,4 +85,8 @@ class Service extends Model implements HasMedia {
     return $this->hasMany(Media::class, "model_id", "id");
 //      ->where("collection_name", "gallery");
   }
+  
+  public function contacts() {
+    return $this->hasMany(Contact::class);
+  }
 }

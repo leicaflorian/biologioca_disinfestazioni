@@ -5,3 +5,4 @@ import './service';
 import './post';
 import './medium';
 import './video';
+import './contact';

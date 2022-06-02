@@ -20176,13 +20176,15 @@ footer a {
   color: white;
 }
 
-.form-control {
+.form-control,
+.form-select {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0;
   border: none;
   border-bottom: 1px solid var(--bs-dark);
 }
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
   background-color: rgba(255, 255, 255, 0.8);
   border-color: var(--bs-primary);
   box-shadow: none;

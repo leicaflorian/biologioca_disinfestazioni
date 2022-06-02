@@ -17,8 +17,13 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::get('/servizi', [\App\Http\Controllers\ServiceController::class, 'index'])->name('services.index');
 Route::get('/servizi/{service}', [\App\Http\Controllers\ServiceController::class, 'details'])->name('services.details');
 Route::get('/contatti', [\App\Http\Controllers\ContactController::class, 'index'])->name('contacts.index');
+Route::post('/contatti', [\App\Http\Controllers\ContactController::class, 'store'])->name('contacts.store');
+/*Route::get('/mailable', function () {
+  $invoice = App\Models\Contact::find(3);
+  
+  return new App\Mail\ContactSubmission($invoice);
+});*/
 
-// pass: h2!@!rjnGX7J
 Auth::routes([
   'register' => false,
   'reset'    => false,
@@ -121,4 +126,20 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
       Route::delete('/{video}', 'VideosController@destroy')->name('destroy');
     });
   });
+});
+
+
+/* Auto-generated admin routes */
+Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
+    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
+        Route::prefix('contacts')->name('contacts/')->group(static function() {
+            Route::get('/',                                             'ContactsController@index')->name('index');
+            Route::get('/create',                                       'ContactsController@create')->name('create');
+            Route::post('/',                                            'ContactsController@store')->name('store');
+            Route::get('/{contact}/edit',                               'ContactsController@edit')->name('edit');
+            Route::post('/bulk-destroy',                                'ContactsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{contact}',                                   'ContactsController@update')->name('update');
+            Route::delete('/{contact}',                                 'ContactsController@destroy')->name('destroy');
+        });
+    });
 });

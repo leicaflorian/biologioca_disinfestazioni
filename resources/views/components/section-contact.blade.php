@@ -1,4 +1,4 @@
-<div class="section bg-light">
+<div class="section bg-light" id="contacts-section">
   <div class="container">
     <div class="row">
       <div class="col-lg">
@@ -29,42 +29,100 @@
 
       </div>
       <div class="col-lg">
-        <form action="">
-          <div class="row">
-            <div class="col-12 col-sm-6">
-              <div class="mb-4 form-floating" data-aos="fade-left">
-                <input type="text" class="form-control" placeholder="Nome">
-                <label for="">Nome</label></div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="mb-4 form-floating" data-aos="fade-left" data-aos-delay="200">
-                <input type="text" class="form-control" placeholder="Email">
-                <label for="">Email</label></div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="mb-4 form-floating" data-aos="fade-left" data-aos-delay="300">
-                <input type="text" class="form-control" placeholder="Servizio">
-                <label for="">Servizio</label></div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="mb-4 form-floating" data-aos="fade-left" data-aos-delay="400">
-                <input type="text" class="form-control" placeholder="Telefono">
-                <label for="">Telefono</label></div>
-            </div>
+        @if(!session()->has('formSubmitted'))
+          <form action="{{route('contacts.store') . '#contacts-section'}}" method="post" class="needs-validation">
+            @csrf
 
-            <div class="col-12">
-              <div class="form-floating mb-4" data-aos="fade-left" data-aos-delay="500">
-                  <textarea class="form-control" placeholder="Scrivi il tuo messaggio..." id="floatingTextarea"
-                            style="height: 100px"></textarea>
-                <label for="floatingTextarea">Scrivi il tuo messaggio...</label>
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="mb-4 form-floating" data-aos="fade-left">
+                  <input type="text" class="form-control @error('name') is-invalid @enderror"
+                         placeholder="Nome"
+                         name="name"
+                         value="{{old('name')}}">
+                  <label for="">Nome</label>
+                  @error('name')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                  @enderror
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="mb-4 form-floating" data-aos="fade-left" data-aos-delay="200">
+                  <input type="text" class="form-control @error('email') is-invalid @enderror"
+                         placeholder="Email" name="email"
+                         value="{{old('email')}}">
+                  <label for="">Email</label>
+                  @error('email')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                  @enderror</div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="mb-4 form-floating" data-aos="fade-left" data-aos-delay="300">
+                  <select type="text" class="form-select @error('service_id') is-invalid @enderror"
+                          placeholder="Servizio" name="service_id">
+                    <option value="">Scegli un servizio...</option>
+                    @foreach($services as $service)
+                      <option value="{{$service->id}}"
+                          {{old('service_id') == $service->id ? 'selected' : ''}}>
+                        {{$service->title}}
+                      </option>
+                    @endforeach
+                  </select>
+                  <label for="">Servizio</label>
+                  @error('service_id')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                  @enderror</div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="mb-4 form-floating" data-aos="fade-left" data-aos-delay="400">
+                  <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                         placeholder="Telefono" name="phone"
+                         value="{{old('phone')}}">
+                  <label for="">Telefono</label>
+                  @error('phone')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                  @enderror
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating mb-4" data-aos="fade-left" data-aos-delay="500">
+                  <textarea class="form-control @error('message') is-invalid @enderror"
+                            placeholder="Scrivi il tuo messaggio..." id="floatingTextarea"
+                            style="height: 100px" name="message">{{old('message')}}</textarea>
+                  <label for="floatingTextarea">Scrivi il tuo messaggio...</label>
+                  @error('message')
+                  <div class="invalid-feedback">
+                    {{$message}}
+                  </div>
+                  @enderror
+                </div>
               </div>
             </div>
-          </div>
 
-          <div data-aos="fade-up" data-aos-delay="200">
-            <button class="btn btn-primary">Invia</button>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <button class="btn btn-primary">Invia</button>
+            </div>
+          </form>
+        @else
+          <div class="d-flex flex-column align-items-center">
+            <div
+                class="border border-2 border-primary rounded-circle d-flex justify-content-center align-items-center mb-5"
+                style="width: 100px; height: 100px">
+              <i class="fa-solid fa-check fa-5x text-primary"></i>
+            </div>
+
+            <div class="display-5 text-center">Grazie per averci contattato! Vi risponderemo il prima possibile!</div>
           </div>
-        </form>
+        @endif
       </div>
     </div>
   </div>

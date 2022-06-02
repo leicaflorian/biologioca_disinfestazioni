@@ -29,11 +29,10 @@
             "Friday"
           ],
           "opens": "08:00",
-          "closes": "18:00"
+          "closes": "19:00"
         }],
-        "url": "https://www.biologicadisinfestazioni.it/"
+        "url": "https://www.biologicadisinfestazioni.it"
       }
-
 
 </script>
 
@@ -44,6 +43,7 @@
         "url": "https://www.biologicadisinfestazioni.it",
         "logo": "https://uploads-ssl.webflow.com/61af21b02799774300900f28/61b1c00a85f88d0a8ea7ae6e_Ape%20Logo.svg"
       }
+
 
 
 </script>
@@ -89,5 +89,10 @@
           }
         ]
       }
+
+
+
+
+
 
 </script>
