@@ -1,3 +1,22 @@
-.lead{
+@import '~bootstrap/scss/mixins/breakpoints';
+
+.lead {
   font-weight: var(--bs-body-font-weight);
+}
+
+
+#map {
+  height: 50vh;
+  z-index: 3;
+  position: relative;
+  top: calc(0px - var(--section-padding));
+
+  @include media-breakpoint-up("md") {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: calc(50% + 1rem);
+    bottom: 0;
+    height: auto;
+  }
 }

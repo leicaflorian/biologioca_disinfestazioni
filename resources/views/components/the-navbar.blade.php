@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-light shadow-sm">
   <div class="container">
-    <a class="navbar-brand p-0" href="#">
+    <a class="navbar-brand p-0" href="{{route("home")}}">
       <img src="{{asset('images/logo.svg')}}" alt="biologica disinfestazioni logo" height="54">
     </a>
 

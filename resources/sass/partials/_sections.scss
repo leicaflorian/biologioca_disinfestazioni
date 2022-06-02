@@ -5,6 +5,7 @@
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
   position: relative;
+  overflow: hidden;
 
   .bg-jumbotron {
     position: absolute;
@@ -24,7 +25,7 @@
       top: -2.5rem;
       bottom: calc(0px - var(--section-padding));
 
-      &.bg-offset-top{
+      &.bg-offset-top {
         top: calc(0px - var(--section-padding));
       }
 
@@ -48,8 +49,14 @@
     margin-bottom: 2.5rem;
   }
 
-  .lead {
+  .lead:not(:last-child) {
     margin-bottom: 2rem;
+  }
+
+  .main-text {
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @include media-breakpoint-up(lg) {

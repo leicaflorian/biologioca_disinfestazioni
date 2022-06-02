@@ -1,0 +1,74 @@
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+  max-height: 80vh;
+  position: relative;
+
+  .swiper-container {
+    height: 100%;
+    padding-bottom: 25px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    &:after {
+      padding: 8px;
+      background: rgba(255, 255, 255, .6);
+      color: var(--bs-primary)
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 0 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--bs-primary)
+
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+
+  .caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    padding: 1rem;
+  }
+
+  .yt-video {
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .link_play {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      &:after {
+        content: "";
+        background-image: url("/images/yt_play.webp");
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        filter: drop-shadow(0px 2px 7px rgba(255, 255, 255, 1));
+      }
+    }
+  }
+}

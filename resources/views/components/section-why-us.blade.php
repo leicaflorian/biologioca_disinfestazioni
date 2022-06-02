@@ -4,11 +4,11 @@
 
 <div class="section {{$bgColor}}">
   <div class="container">
-    <h3 class="section-title mb-0">Perchè scegliere noi?</h3>
-    <h6 class="text-secondary mb-5">Ecco 4 buoni motivi</h6>
+    <h3 class="section-title mb-0" data-aos="fade-right">Perchè scegliere noi?</h3>
+    <h6 class="text-secondary mb-5" data-aos="fade-right" data-aos-delay="200">Ecco 4 buoni motivi</h6>
 
     <div class="row row-cols-1 row-cols-md-2 g-4 g-lg-5">
-      <div class="col">
+      <div class="col" data-aos="fade-up">
         @include("components.card-why-us", [
           "icon" => "fa-solid fa-leaf",
           "title" => "Eco-friendly",
@@ -17,7 +17,7 @@
         ])
       </div>
 
-      <div class="col">
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
         @include("components.card-why-us", [
           "icon" => "fa-solid fa-house-circle-check",
           "title" => "Sicurezza",
@@ -26,7 +26,7 @@
         ])
       </div>
 
-      <div class="col">
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
         @include("components.card-why-us", [
          "icon" => "fa-solid fa-hourglass",
          "title" => "Tempestività",
@@ -34,7 +34,7 @@
        ])
       </div>
 
-      <div class="col">
+      <div class="col" data-aos="fade-up" data-aos-delay="300">
         @include("components.card-why-us", [
           "icon" => "fa-solid fa-award",
           "title" => "Alta qualità",

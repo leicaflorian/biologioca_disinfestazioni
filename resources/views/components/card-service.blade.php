@@ -8,13 +8,13 @@
   <img src="{{$service->getFirstMediaUrl("img_cover", "thumb_600")}}" alt="{{$service->img_cover_alt}}">
 </div>
 
-<div class="card-body">
+<div class="card-body " >
   @if(!$withDescription)
     <h5 class="card-title fs-6 mb-0">{{$service->title}}</h5>
   @else
     <h5 class="card-title fs-6 text-start mb-4">{{$service->title}}</h5>
 
-    <div class="card-text text-start text-secondary overflow-auto"
+    <div class="card-text text-start text-secondary overflow-auto" data-simplebar
          style="max-height: 200px">{!! $service->description !!}</div>
 
     @if($service->has_page)

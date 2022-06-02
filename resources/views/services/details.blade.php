@@ -2,18 +2,19 @@
 
 @section("page-title", $service->name)
 @section("page-description", $service->description_short)
+@section("og_type", "product")
 
 @section("content")
   <div class="section">
     <div class="container">
       <div class="section-jumbotron position-relative">
         <div class="bg-jumbotron bg-end-75 bg-offset-top">
-          <img src="{{asset("storage/" . $service->img_cover)}}" alt="{{$service->img_cover_alt}}">
+          <img src="{{$service->getFirstMediaUrl("img_cover")}}" alt="{{$service->img_cover_alt}}" data-aos="fade-left">
         </div>
 
         <div class="row">
           <div class="col col-md-8 col-lg-7 col-xl-6">
-            <div class="card card-jumbotron">
+            <div class="card card-jumbotron" data-aos="fade-right" data-aos-delay="200">
               <div class="card-body">
                 <h1 class="card-title mb-0">{{$service->title}}</h1>
               </div>
@@ -28,13 +29,21 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-9 mx-lg-auto">
-          <div class="lead">{!! $service->description_long  !!}</div>
-
+          <div class="lead main-text" data-aos="fade-up" data-aos-delay="300">{!! $service->description  !!}</div>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="section py-0">
+    @php
+      $gallery = $service->gallery->toArray();
+      $videos = $service->videos->toArray();
+    @endphp
+
+    <slider :slides-per-view='"auto"' :images="{{json_encode($gallery)}}"
+            :videos="{{json_encode($videos)}}"></slider>
+  </div>
 
   @include("components.banner-contact-us", ["bgColor" => "bg-primary"])
 
@@ -44,13 +53,19 @@
   <div class="section">
     <div class="container">
       <h3 class="section-title d-flex align-items-center">
+        <span class="d-inline-block" data-aos="fade-right">
         Altri servizi
-        <a href="" class="btn btn-outline-primary ms-auto d-none d-md-block">Tutti i servizi</a>
+        </span>
+        <div data-aos="fade-left" class="ms-auto"
+             data-aos-delay="200">
+          <a href="{{route('services.index')}}" class="btn btn-outline-primary  d-none d-md-block">Tutti
+            i servizi</a>
+        </div>
       </h3>
 
       <div class="row row-cols-3 g-3 g-md-4 mb-5">
-        @foreach($otherServices as $service)
-          <div class="col">
+        @foreach($otherServices as $key=>$service)
+          <div class="col" data-aos="fade-left" data-aos-delay="{{$key * 100}}">
             @include("components.card-service", ["withDescription" => true])
           </div>
         @endforeach

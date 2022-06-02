@@ -6,8 +6,26 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:title" content="@yield("page-title") | Biologica Disinfestazioni - Professionisti nella provincia di Vicenza, Treviso e Padova">
+  <meta property="og:site_name" content="Biologica Disinfestazioni - Professionisti nella provincia di Vicenza, Treviso e Padova">
+  <meta property="og:url" content="https://www.biologicadisinfestazioni.it/">
+  <meta property="og:description" content="@yield("page-description")">
+  <meta property="og:type" content="@yield("og_type", 'website')">
+  <meta property="og:image"
+        content='url("https://uploads-ssl.webflow.com/61af21b02799774300900f28/61b0a8da69101e54ca38adb9_Hero%20Donna%20e%20bimba.jpg")'>
+
   <title>@yield("page-title") | Biologica Disinfestazioni</title>
   <meta name="description" content="@yield("page-description")">
+
+  @include("components.ldJson")
 
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
@@ -22,6 +40,12 @@
 
 @include('components.the-footer')
 
+<a href="" class="btn btn-primary go-up-btn go-up-btn-hidden">
+  <i class="fas fa-chevron-up fa-xl"></i>
+</a>
+
 <script src="{{ asset('js/app.js') }}"></script>
+
+@yield("scripts")
 </body>
 </html>

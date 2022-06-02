@@ -1,22 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/images/con_cura_1.jpeg": "/images/con_cura_1.jpeg",
-    "/images/con_cura_2.jpeg": "/images/con_cura_2.jpeg",
-    "/images/home_jumbo_bg.jpeg": "/images/home_jumbo_bg.jpeg",
-    "/images/icon_bg_hash_white.svg": "/images/icon_bg_hash_white.svg",
-    "/images/icon_bg_mail.svg": "/images/icon_bg_mail.svg",
-    "/images/icon_bg_mail_white.svg": "/images/icon_bg_mail_white.svg",
-    "/images/icon_bg_phone.svg": "/images/icon_bg_phone.svg",
-    "/images/icon_bg_phone_white.svg": "/images/icon_bg_phone_white.svg",
-    "/images/icon_bg_pin.svg": "/images/icon_bg_pin.svg",
-    "/images/icon_convenient.svg": "/images/icon_convenient.svg",
-    "/images/icon_eco_friendly.svg": "/images/icon_eco_friendly.svg",
-    "/images/icon_quality.svg": "/images/icon_quality.svg",
-    "/images/icon_security.svg": "/images/icon_security.svg",
-    "/images/logo.svg": "/images/logo.svg",
-    "/images/section_bg_leafs.png": "/images/section_bg_leafs.png",
-    "/images/service-1.jpeg": "/images/service-1.jpeg",
-    "/images/services_jumbo_bg.html": "/images/services_jumbo_bg.html",
-    "/images/services_jumbo_bg.jpeg": "/images/services_jumbo_bg.jpeg"
+    "/js/admin.js": "/js/admin.js",
+    "/css/admin.css": "/css/admin.css",
+    "/css/app.css": "/css/app.css"
 }

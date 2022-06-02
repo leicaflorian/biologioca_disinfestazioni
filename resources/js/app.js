@@ -8,6 +8,10 @@ require('./bootstrap')
 
 window.Vue = require('vue').default
 
+import AOS from 'aos'
+import 'simplebar'
+import 'simplebar/dist/simplebar.css'
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -20,6 +24,7 @@ window.Vue = require('vue').default
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('file-input', require('./components/FileInput.vue').default)
+Vue.component('slider', require('./components/Slider.vue').default)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,3 +35,24 @@ Vue.component('file-input', require('./components/FileInput.vue').default)
 const app = new Vue({
   el: '#app'
 })
+
+AOS.init({
+  once: true,
+  easing: 'ease-out'
+})
+
+// Handle go up btn
+function addGoTopButton () {
+  const btn = document.querySelector('.go-up-btn')
+  
+  window.addEventListener('scroll', () => {
+    const scrollHeight = document.body.scrollHeight
+    const scrollTop = window.scrollY
+    const scrollPercentage = scrollTop * 100 / scrollHeight
+    
+    btn.classList.toggle('go-up-btn-hidden', scrollPercentage < 15)
+  })
+  
+}
+
+addGoTopButton()
