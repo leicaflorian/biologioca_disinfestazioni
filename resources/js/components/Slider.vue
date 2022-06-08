@@ -1,5 +1,5 @@
 <template>
-  <div class="slider-container">
+  <div class="slider-container" ref="slider">
     <div class="swiper swiper-container">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
@@ -23,7 +23,8 @@
         </div>
 
         <div class="swiper-slide" v-for="img of images" :key="img.id">
-          <img :src="img.original_url" :alt="img.alt_text" class="">
+          <img :src="img.full_hd_url" :alt="img.alt_text" class=""
+               loading="lazy">
           <div class="caption" v-if="img.caption">
             {{ img.caption }}
           </div>
@@ -40,25 +41,10 @@
       <!-- If we need scrollbar -->
       <!--      <div class="swiper-scrollbar"></div>-->
     </div>
-    <!--
-        <swiper :slides-per-view="slidesPerView"
-                :loop="true"
-                :navigation="true"
-                :centeredSlides="true"
-                :spaceBetween="30"
-                :grabCursor="true"
-                :pagination="true"
-                @swiper="onSwiper"
-                @slideChange="onSlideChange">
-
-
-        </swiper>-->
   </div>
 </template>
 
 <script>
-// Import Swiper Vue.js components
-// import { SwiperCore, Swiper, SwiperSlide } from 'swiper-vue2'
 import { Pagination, Navigation } from 'swiper'
 import Swiper from 'swiper'
 
@@ -67,6 +53,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
+import lightGallery from 'lightgallery'
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
+import lgVideo from 'lightgallery/plugins/video'
 // SwiperCore.use([Navigation, Pagination])
 
 export default {
@@ -141,6 +131,11 @@ export default {
     swiper.on('slideChange', () => {
       this.playingVideo = null
     })
+
+    /*lightGallery(this.$refs.slider, {
+      plugins: [lgZoom, lgThumbnail, lgVideo],
+      speed: 500
+    })*/
   }
 }
 </script>

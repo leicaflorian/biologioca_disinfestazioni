@@ -83,21 +83,6 @@
   </div>
 </div>
 
-
-<div class="form-group row align-items-center"
-     :class="{'has-danger': errors.has('img_cover_alt'), 'has-success': fields.img_cover_alt && fields.img_cover_alt.valid }">
-  <label for="img_cover_alt" class="col-form-label text-md-right"
-         :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.service.columns.img_cover_alt') }}</label>
-  <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-    <input type="text" v-model="form.img_cover_alt" v-validate="''" @input="validate($event)" class="form-control"
-           :class="{'form-control-danger': errors.has('img_cover_alt'), 'form-control-success': fields.img_cover_alt && fields.img_cover_alt.valid}"
-           id="img_cover_alt" name="img_cover_alt" placeholder="{{ trans('admin.service.columns.img_cover_alt') }}">
-    <div v-if="errors.has('img_cover_alt')" class="form-control-feedback form-text" v-cloak>@{{
-      errors.first('img_cover_alt') }}
-    </div>
-  </div>
-</div>
-
 <div class="form-check row"
      :class="{'has-danger': errors.has('has_page'), 'has-success': fields.has_page && fields.has_page.valid }">
   <div class="ml-md-auto" :class="isFormLocalized ? 'col-md-8' : 'col-md-10'">
@@ -137,16 +122,59 @@
     <div v-if="errors.has('order')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('order') }}</div>
   </div>
 </div>
-
-
 @include('brackets/admin-ui::admin.includes.media-uploader', [
     'mediaCollection' => app(App\Models\Service::class)->getMediaCollection('img_cover'),
-    'media' => $service->getThumbs200ForCollection('img_cover'),
+    'media' => isset($service) ? $service->getThumbs200ForCollection('img_cover') : null,
     'label' => 'Immagine di copertina',
 ])
 
+@if(isset($service))
+  <div class="form-group row align-items-center my-3">
+    <label for="alt_text_img_cover" class="col-form-label text-md-right"
+           :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.service.columns.alt_text') }}</label>
+    <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+      <ul class="list-unstyled">
+        @foreach($service->getMedia('img_cover') as $media)
+          <li class="d-flex align-items-center py-2">
+            {{$media("thumb_200", ['class' => 'img-thumbnail', "style" => "width: 100px"])}}
+
+            <input class="form-control ml-4" type="text" placeholder="Alt text"
+                   v-model="form.img_cover_meta[{{$media->id}}]['alt_text']">
+          </li>
+        @endforeach
+      </ul>
+    </div>
+  </div>
+@endif
+
 @include('brackets/admin-ui::admin.includes.media-uploader', [
     'mediaCollection' => app(App\Models\Service::class)->getMediaCollection('gallery'),
-    'media' => $service->getThumbs200ForCollection('gallery'),
+    'media' => isset($service) ? $service->getThumbs200ForCollection('gallery') : null,
     'label' => 'Galleria'
 ])
+
+@if(isset($service))
+  <div class="form-group row align-items-center my-3">
+    <label for="alt_text_img_cover" class="col-form-label text-md-right"
+           :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.service.columns.alt_text') }}</label>
+    <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
+      <ul class="list-unstyled">
+        @foreach($service->getMedia('gallery') as $media)
+          <li class="d-flex align-items-center py-2">
+            {{$media("thumb_200", ['class' => 'img-thumbnail', "style" => "width: 100px"])}}
+
+            <div class="d-flex flex-column w-100 pl-4" style="gap: .3rem">
+              <input class="form-control" type="text" placeholder="Alt text"
+                     v-model="form.gallery_meta[{{$media->id}}]['alt_text']">
+              <input class="form-control" type="text" placeholder="Caption"
+                     v-model="form.gallery_meta[{{$media->id}}]['caption']">
+              <input class="form-control" type="number" placeholder="Order"
+                     v-model="form.gallery_meta[{{$media->id}}]['order']">
+            </div>
+          </li>
+
+        @endforeach
+      </ul>
+    </div>
+  </div>
+@endif

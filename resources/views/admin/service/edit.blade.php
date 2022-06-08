@@ -7,9 +7,23 @@
   <div class="container-xl">
     <div class="card">
 
+      @php
+        $data = $service->toArray();
+        $media = [...$service->getMedia("gallery")->toArray(), ...$service->getMedia("img_cover")->toArray()];
+
+        if(count($media) > 0){
+          foreach ($media as $image) {
+            $collection = $image["collection_name"];
+            $data[$collection . '_meta'][$image["id"]]['alt_text'] = $image["alt_text"];
+            $data[$collection . '_meta'][$image["id"]]['order'] = $image["order"];
+            $data[$collection . '_meta'][$image["id"]]['caption'] = $image["caption"];
+          }
+        }
+      @endphp
+
       <service-form
           :action="'{{ $service->resource_url }}'"
-          :data="{{ $service->toJson() }}"
+          :data="{{ json_encode($data) }}"
           v-cloak
           inline-template>
 

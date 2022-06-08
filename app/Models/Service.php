@@ -7,7 +7,6 @@ use Brackets\Media\HasMedia\HasMediaCollectionsTrait;
 use Brackets\Media\HasMedia\HasMediaThumbsTrait;
 use Brackets\Media\HasMedia\ProcessMediaTrait;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
@@ -58,18 +57,30 @@ class Service extends Model implements HasMedia {
     
     $this->addMediaCollection('img_cover')
       ->accepts('image/*')
-      ->getMaxNumberOfFiles(1);
+      ->singleFile();
+    
   }
   
   public function registerMediaConversions(Media $media = null): void {
     $this->autoRegisterThumb200();
     
     $this->getMediaCollections()->filter->isImage()->each(function ($mediaCollection) {
-      $this->addMediaConversion('thumb_600')
-        ->width(600)
-        ->fit(Manipulations::FIT_CONTAIN, 600, 600)
+      // Conversions on img_cover
+      $this->addMediaConversion('card')
+        ->width(750)
         ->optimize()
-        ->performOnCollections($mediaCollection->getName());
+        ->performOnCollections('img_cover');
+      
+      $this->addMediaConversion('hd')
+        ->width(1280)
+        ->optimize()
+        ->performOnCollections('img_cover');
+
+      // Conversions on gallery
+      $this->addMediaConversion('full-hd')
+        ->width(1920)
+        ->optimize()
+        ->performOnCollections('gallery');
     });
   }
   
@@ -82,8 +93,20 @@ class Service extends Model implements HasMedia {
   }
   
   public function gallery() {
+    return $this->hasMany(Media::class, "model_id", "id")
+      ->where("collection_name", "gallery");
+    
+  }
+  
+  
+  public function img_cover() {
+    return $this->hasMany(Media::class, "model_id", "id")
+      ->where("collection_name", "img_cover");
+    
+  }
+  
+  public function allMedia() {
     return $this->hasMany(Media::class, "model_id", "id");
-//      ->where("collection_name", "gallery");
   }
   
   public function contacts() {

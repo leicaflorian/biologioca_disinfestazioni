@@ -9,7 +9,11 @@
     <div class="container">
       <div class="section-jumbotron position-relative">
         <div class="bg-jumbotron bg-end-75 bg-offset-top">
-          <img src="{{$service->getFirstMediaUrl("img_cover")}}" alt="{{$service->img_cover_alt}}" data-aos="fade-left">
+          {{ $service->getFirstMedia("img_cover")("hd", [
+              "alt"=>$service->getFirstMedia("img_cover")["alt_text"],
+              "class"=>"img-fluid",
+              "data-aos"=>"fade-left"
+            ]) }}
         </div>
 
         <div class="row">
@@ -37,12 +41,20 @@
 
   <div class="section py-0">
     @php
-      $gallery = $service->gallery->toArray();
+      $gallery = [];
+
+      foreach ($service->getMedia("gallery") as $media) {
+        $gallery[] =array_merge($media->toArray(), [
+            "full_hd_url"=>$media->getFullUrl("full-hd"),
+          ]);
+      }
+
       $videos = $service->videos->toArray();
     @endphp
 
     <slider :slides-per-view='"auto"' :images="{{json_encode($gallery)}}"
             :videos="{{json_encode($videos)}}"></slider>
+
   </div>
 
   @include("components.banner-contact-us", ["bgColor" => "bg-primary"])

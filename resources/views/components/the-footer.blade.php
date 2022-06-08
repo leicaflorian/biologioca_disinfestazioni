@@ -32,6 +32,11 @@
               <i class="fa-brands fa-facebook-f icon-rounded icon-outline icon-white icon-lg"
                  style="font-size: 1.5rem"></i>
             </a>
+            <a href="https://www.youtube.com/channel/UCKT3azjz_wsuc69Xi-9FTXw" target="_blank" data-aos="fade-left"
+               data-aos-delay="200" class="d-inline-flex">
+              <i class="fa-brands fa-youtube icon-rounded icon-outline icon-white icon-lg"
+                 style="font-size: 1.5rem"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -44,7 +49,25 @@
            style="gap: 1rem">
         <div data-aos="fade-right">Tutti i diritti riservati</div>
         <div data-aos="fade-up" data-aos-delay="100">© {{date ("Y")}} Biologica Disinfestazioni</div>
-        <a href="#" data-aos="fade-left" data-aos-delay="200">Privacy Policy</a>
+
+        <a href="https://www.iubenda.com/privacy-policy/99857820"
+           class="iubenda-nostyle no-brand iubenda-noiframe iubenda-embed iubenda-noiframe " title="Privacy Policy "
+           data-aos="fade-left" data-aos-delay="200">
+          Privacy Policy</a>
+        <a href="https://www.iubenda.com/privacy-policy/99857820/cookie-policy"
+           class="iubenda-nostyle no-brand iubenda-noiframe iubenda-embed iubenda-noiframe " title="Cookie Policy "
+           data-aos="fade-left" data-aos-delay="300">
+          Cookie Policy
+        </a>
+
+        <script type="text/javascript">(function (w, d) {
+            var loader = function () {
+              var s = d.createElement('script'), tag = d.getElementsByTagName('script')[0]
+              s.src = 'https://cdn.iubenda.com/iubenda.js'
+              tag.parentNode.insertBefore(s, tag)
+            }
+            if (w.addEventListener) {w.addEventListener('load', loader, false)} else if (w.attachEvent) {w.attachEvent('onload', loader)} else {w.onload = loader}
+          })(window, document)</script>
       </div>
 
       <div>

@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -29,15 +28,6 @@ Auth::routes([
   'reset'    => false,
   'verify'   => false,
 ]);
-
-/*Route::group(['prefix'     => 'admin',
-              'as'       => "admin.",
-              'middleware' => ['auth']
-], function () {
-  Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
-  Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
-});*/
-
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
@@ -65,7 +55,6 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
   });
 });
 
-
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
   Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
@@ -80,7 +69,6 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
   });
 });
-
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
@@ -128,18 +116,17 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
   });
 });
 
-
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
-    Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function() {
-        Route::prefix('contacts')->name('contacts/')->group(static function() {
-            Route::get('/',                                             'ContactsController@index')->name('index');
-            Route::get('/create',                                       'ContactsController@create')->name('create');
-            Route::post('/',                                            'ContactsController@store')->name('store');
-            Route::get('/{contact}/edit',                               'ContactsController@edit')->name('edit');
-            Route::post('/bulk-destroy',                                'ContactsController@bulkDestroy')->name('bulk-destroy');
-            Route::post('/{contact}',                                   'ContactsController@update')->name('update');
-            Route::delete('/{contact}',                                 'ContactsController@destroy')->name('destroy');
-        });
+  Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
+    Route::prefix('contacts')->name('contacts/')->group(static function () {
+      Route::get('/', 'ContactsController@index')->name('index');
+      Route::get('/create', 'ContactsController@create')->name('create');
+      Route::post('/', 'ContactsController@store')->name('store');
+      Route::get('/{contact}/edit', 'ContactsController@edit')->name('edit');
+      Route::post('/bulk-destroy', 'ContactsController@bulkDestroy')->name('bulk-destroy');
+      Route::post('/{contact}', 'ContactsController@update')->name('update');
+      Route::delete('/{contact}', 'ContactsController@destroy')->name('destroy');
     });
+  });
 });
