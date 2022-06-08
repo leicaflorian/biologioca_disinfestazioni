@@ -10,7 +10,7 @@
       <div class="section-jumbotron position-relative">
         <div class="bg-jumbotron bg-end-75 bg-offset-top">
           {{ $service->getFirstMedia("img_cover")("hd", [
-              "alt"=>$service->img_cover_alt,
+              "alt"=>$service->getFirstMedia("img_cover")["alt_text"],
               "class"=>"img-fluid",
               "data-aos"=>"fade-left"
             ]) }}
@@ -41,7 +41,6 @@
 
   <div class="section py-0">
     @php
-      //$gallery = $service->gallery->toArray();
       $gallery = $service->getMedia("gallery");
       $videos = $service->videos->toArray();
     @endphp
@@ -52,19 +51,28 @@
            data-lg-size="1280-720"
            data-src="{{$video["video_link"]}}" class="d-inline-block"
            data-poster="{{$video["thumb_high"]}}">
-          <img src="{{$video["thumb_high"]}}" alt="" class="w-100 h-100" style="object-fit: cover;">
+          <img src="{{$video["thumb_high"]}}" alt="Anteprima video {{$video['title']}}" class="w-100 h-100"
+               style="object-fit: cover;">
         </a>
       @endforeach
 
       @foreach($gallery as $image)
         <a style="max-width: 400px;" href="{{$image->getFullUrl("full-hd")}}" class="d-inline-block">
           {{$image('full-hd', [
-                  "alt"=> $image->getCustomProperty("alt"),
+                  "alt"=> $image["alt_text"] ?? "Immagine relativa al servizio ". $service->title,
                   "class"=> "w-100 h-100",
                   "style"=> "object-fit: cover;",
             ])}}
         </a>
       @endforeach
+
+      <div class="overlay">
+        <span class="display-2 mb-3">Caricamento in corso...</span>
+
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     </div>
   </div>
 

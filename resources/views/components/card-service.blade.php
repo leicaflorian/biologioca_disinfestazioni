@@ -3,10 +3,12 @@
   $tag = $withDescription ? 'div' : 'a';
 @endphp
 
-<{{$tag}} class="card card-service h-100" href="{{route('services.details', $service->slug)}}">
+<{{$tag}} class="card card-service h-100" @if($tag === "a")
+  href="{{route('services.details', $service->slug)}}"
+@endif>
 <div class="card-img-top">
   {{ $service->getFirstMedia("img_cover")("card", [
-              "alt"=>$service->img_cover_alt,
+              "alt"=>$service->getFirstMedia("img_cover")["alt_text"],
             ]) }}
 </div>
 

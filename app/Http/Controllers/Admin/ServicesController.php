@@ -142,7 +142,7 @@ class ServicesController extends Controller {
     
     $this->updateMediaMetadata($service, $request->input("img_cover_meta"));
     $this->updateMediaMetadata($service, $request->input("gallery_meta"));
-    
+  
     if ($request->ajax()) {
       return [
         'redirect' => url('admin/services'),
@@ -202,8 +202,7 @@ class ServicesController extends Controller {
    * @return void
    */
   private function updateMediaMetadata(Service $service, array|null $metadata) {
-    
-    if(isNull($metadata)) {
+    if(is_null($metadata)) {
       return;
     }
     

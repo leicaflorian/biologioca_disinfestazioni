@@ -98,6 +98,13 @@ class Service extends Model implements HasMedia {
     
   }
   
+  
+  public function img_cover() {
+    return $this->hasMany(Media::class, "model_id", "id")
+      ->where("collection_name", "img_cover");
+    
+  }
+  
   public function allMedia() {
     return $this->hasMany(Media::class, "model_id", "id");
   }

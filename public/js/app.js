@@ -4455,21 +4455,27 @@ aos__WEBPACK_IMPORTED_MODULE_0___default().init({
   once: true,
   easing: 'ease-out'
 });
-var magicGrid = new (magic_grid__WEBPACK_IMPORTED_MODULE_1___default())({
-  container: "#gridContainer",
-  // Required. Can be a class, id, or an HTMLElement.
-  "static": true,
-  // Required for static content.
-  animate: true,
-  // Optional.
-  // useMin: true,
-  gutter: 5
-});
-(0,lightgallery__WEBPACK_IMPORTED_MODULE_2__["default"])(document.getElementById('gridContainer'), {
-  plugins: [lightgallery_plugins_zoom__WEBPACK_IMPORTED_MODULE_4__["default"], lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_3__["default"], lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_5__["default"]],
-  speed: 500
-});
-magicGrid.listen(); // Handle go up btn
+setTimeout(function () {
+  var magicGrid = new (magic_grid__WEBPACK_IMPORTED_MODULE_1___default())({
+    container: '#gridContainer',
+    // Required. Can be a class, id, or an HTMLElement.
+    "static": true,
+    // Required for static content.
+    animate: false,
+    // Optional.
+    // useMin: true,
+    gutter: 5,
+    center: false
+  });
+  magicGrid.listen();
+  setTimeout(function () {
+    (0,lightgallery__WEBPACK_IMPORTED_MODULE_2__["default"])(document.getElementById('gridContainer'), {
+      plugins: [lightgallery_plugins_zoom__WEBPACK_IMPORTED_MODULE_4__["default"], lightgallery_plugins_thumbnail__WEBPACK_IMPORTED_MODULE_3__["default"], lightgallery_plugins_video__WEBPACK_IMPORTED_MODULE_5__["default"]],
+      speed: 500
+    });
+  }, 200);
+  document.querySelector('#gridContainer .overlay').classList.add('d-none');
+}, 1000); // Handle go up btn
 
 function addGoTopButton() {
   var btn = document.querySelector('.go-up-btn');
