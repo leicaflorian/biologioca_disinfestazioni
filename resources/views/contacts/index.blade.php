@@ -1,6 +1,7 @@
 @extends("layouts.main")
 
 @section("page-title", "Contatti")
+@section("page-description", "Contattataci per avere un preventivo gratuito o per qualsiasi altra informazione sugli infestanti che ti disturbano.")
 
 @section("content")
   <div class="section">
@@ -15,8 +16,8 @@
             <div class="card card-jumbotron" data-aos="fade-right" data-aos-delay="200">
               <div class="card-body">
                 <h1 class="card-title mb-5">Contatti</h1>
-                <p class="lead mb-0">Meglio agire: affidati agli specialisti.
-                  Scopri i nostri servizi e chiedici consiglio!
+                <p class="lead mb-0">Meglio agire in fretta: Contattaci per avere un preventivo gratuito o per
+                  qualsiasi altra informazione sugli infestanti che ti disturbano!
                 </p>
               </div>
             </div>
@@ -79,13 +80,15 @@
             array_multisort($marks, SORT_ASC, $citiesList);
           @endphp
 
-          <ul class="list-group overflow-auto list-group-flush" id="locationsList" style="max-height: 300px;"
-              data-aos="fade-left" data-aos-delay="300">
+          <div class="list-group overflow-auto list-group-flush" id="locationsList" style="max-height: 300px;"
+               data-aos="fade-left" data-aos-delay="300">
             @foreach($citiesList as $city)
-              <li class="list-group-item list-group-item-action"
-                  data-coordinates="{{$city["coordinates"]}}">{{$city["label"]}}</li>
+              <h6 class="list-group-item list-group-item-action mb-0 fw-normal fa-1x"
+                  data-coordinates="{{$city["coordinates"]}}">
+                {{$city["label"]}}
+              </h6>
             @endforeach
-          </ul>
+          </div>
         </div>
       </div>
     </div>

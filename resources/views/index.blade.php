@@ -1,6 +1,7 @@
 @extends("layouts.main")
 
 @section("page-title", "Home")
+@section("page-description", "Siamo un azienda di Disinfestazione ed operiamo in tutto il gran parte del territorio Veneto! Ci occupiamo di tutti i tipi di infestanti, piccoli e grandi!")
 
 @section("content")
   {{--  Jumbotron --}}

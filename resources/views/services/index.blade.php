@@ -1,6 +1,7 @@
 @extends("layouts.main")
 
 @section("page-title", "Tutti i nostri servizi")
+@section("page-description", "Grazie all'esperienza acquisita siamo in grado di risolvere qualsiasi inconveniente causato da infestanti piccoli o grandi!")
 
 @section("content")
   <div class="section">
