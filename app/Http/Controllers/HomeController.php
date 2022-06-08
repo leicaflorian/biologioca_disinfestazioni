@@ -6,7 +6,6 @@ use App\Models\Service;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller {
   /**
@@ -18,14 +17,6 @@ class HomeController extends Controller {
     return view('index', [
       'featuredServices' => $featuredServices,
     ]);
-  }
-  
-  function demo() {
-    return  view("demo");
-  }
-  
-  function demo_store(Request $request) {
-    return $request->all();
   }
   
 }

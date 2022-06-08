@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -24,23 +23,11 @@ Route::post('/contatti', [\App\Http\Controllers\ContactController::class, 'store
   return new App\Mail\ContactSubmission($invoice);
 });*/
 
-Route::get('/_demo', [\App\Http\Controllers\HomeController::class, 'demo'])->name('home.demo');
-Route::post('/_demo',  [\App\Http\Controllers\HomeController::class, 'demo_Store'])->name('home.demo_store');
-
 Auth::routes([
   'register' => false,
   'reset'    => false,
   'verify'   => false,
 ]);
-
-/*Route::group(['prefix'     => 'admin',
-              'as'       => "admin.",
-              'middleware' => ['auth']
-], function () {
-  Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
-  Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
-});*/
-
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
@@ -68,7 +55,6 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
   });
 });
 
-
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
   Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {
@@ -83,7 +69,6 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
   });
 });
-
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
@@ -130,7 +115,6 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
     });
   });
 });
-
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
