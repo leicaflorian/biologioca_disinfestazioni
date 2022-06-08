@@ -17,7 +17,7 @@
   <title>@yield("page-title") | Biologica Disinfestazioni</title>
   <meta name="description" content="@yield("page-description")">
 
-  @if(env("APP_DEBUG") === false)
+  @if(env("APP_INCLUDE_GTAGS") === true)
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
         w[l] = w[l] || []
@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-@if(env("APP_DEBUG") === false)
+@if(env("APP_INCLUDE_GTAGS") === true)
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLVCK69"
