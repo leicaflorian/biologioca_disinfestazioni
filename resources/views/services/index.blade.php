@@ -8,7 +8,7 @@
     <div class="container">
       <div class="section-jumbotron position-relative">
         <div class="bg-jumbotron bg-end-75 bg-offset-top">
-          <img src="{{asset('images/services_jumbo_bg.jpeg')}}" alt="" data-aos="fade-left">
+          <img src="{{asset('images/services_jumbo_bg.jpeg')}}" alt="Vista di una città dall'alto" data-aos="fade-left">
         </div>
 
         <div class="row">

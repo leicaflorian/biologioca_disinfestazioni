@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-light shadow-sm">
   <div class="container">
     <a class="navbar-brand p-0" href="{{route("home")}}">
-      <img src="{{asset('images/logo.svg')}}" alt="biologica disinfestazioni logo" height="54">
+      <img src="{{asset('images/logo.svg')}}" alt="Logo Biologica Disinfestazioni" height="54">
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

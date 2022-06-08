@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row gy-md-0 gy-5 justify-content-center">
         <div class="col-md-3 col-lg-4 text-center text-lg-start">
-          <img src="{{asset('images/logo.svg')}}" alt="" class="footer-brand"
+          <img src="{{asset('images/logo.svg')}}" alt="Logo Biologica Disinfestazioni" class="footer-brand"
                data-aos="fade-right">
         </div>
         <div class="col-md-5 col-lg-4 text-center">

@@ -7,22 +7,22 @@
   {{--  Jumbotron --}}
   <div class="section section-jumbotron section-dark">
     <div class="bg-jumbotron">
-      <img src="{{asset('images/home_jumbo_bg.jpeg')}}" alt="">
+      <img src="{{asset('images/home_jumbo_bg.jpeg')}}" alt="Mamma con la figlia ed il cane, all'aperto in sicurezza.">
     </div>
 
     <div class="container text-light">
       <div class="row">
         <div class="col col-md-8 col-lg-6 col-xl-5 col-xxl-4">
           <h1 class="section-title" data-aos="fade-right">DISINFESTIAMO IN MODO RESPONSABILE</h1>
-          <p class="lead" data-aos="fade-right" data-aos-delay="100">
+          <h6 class="lead fw-normal" style="line-height: inherit;" data-aos="fade-right" data-aos-delay="100">
             Rispettare e salvaguardare l'ambiente, ma allo stesso tempo essere efficaci: é possibile? Con Biologica
             Disinfestazioni sì! Proponiamo soluzioni mirate ed efficaci, prediligendo prodotti con un minor impatto
             ambientale e tecniche sempre all’avanguardia.
-          </p>
+          </h6>
 
           <div class="d-flex" style="gap: 2rem">
             <div data-aos="fade-right" data-aos-delay="300">
-              <a href="{{route("contacts.index")}}" class="btn btn-outline-light outline-primary" >Scrivici</a>
+              <a href="{{route("contacts.index")}}" class="btn btn-outline-light outline-primary">Scrivici</a>
             </div>
             <div data-aos="fade-right" data-aos-delay="200">
               <a href="tel:+39 351 7238237" class="btn btn-primary btn-to-light">Chiama</a>
@@ -79,13 +79,13 @@
         <div class="col mb-4 mb-lg-0">
           {{-- Sfondo immagini --}}
           <div class="offset-img-container ">
-            <img src="{{asset('images/con_cura_1.jpeg')}}" alt="" data-aos="fade-right">
-            <img src="{{asset('images/con_cura_2.jpeg')}}" alt="" data-aos="fade-up">
+            <img src="{{asset('images/con_cura_1.jpeg')}}" alt="Esposizione di vari tipi di insetti" data-aos="fade-right">
+            <img src="{{asset('images/con_cura_2.jpeg')}}" alt="Analisi sotto lente di ingrandimento di uno scarafaggio" data-aos="fade-up">
           </div>
         </div>
         <div class="col-lg-5">
           <h2 class="section-title" data-aos="fade-right">
-            Lavoriamo con passione, cura e professionalità!
+            Biologica Disinfestazioni lavora con passione, cura e professionalità!
           </h2>
 
           <p class="lead" data-aos="fade-right" data-aos-delay="100">Il nostro non é solo un lavoro ma prima di tutto

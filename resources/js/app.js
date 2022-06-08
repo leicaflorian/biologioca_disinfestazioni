@@ -4,18 +4,16 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap')
+require('bootstrap');
 
 window.Vue = require('vue').default
 
 import AOS from 'aos'
-import MagicGrid from 'magic-grid'
 
-
-import 'lightgallery/css/lightgallery.css'
-import 'lightgallery/css/lg-zoom.css'
-import 'lightgallery/css/lg-thumbnail.css'
-import 'lightgallery/css/lg-video.css'
+// import 'lightgallery/css/lightgallery.css'
+// import 'lightgallery/css/lg-zoom.css'
+// import 'lightgallery/css/lg-thumbnail.css'
+// import 'lightgallery/css/lg-video.css'
 import 'simplebar'
 import 'simplebar/dist/simplebar.css'
 
@@ -26,9 +24,6 @@ import 'simplebar/dist/simplebar.css'
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('file-input', require('./components/FileInput.vue').default)
 Vue.component('slider', require('./components/Slider.vue').default)

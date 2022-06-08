@@ -53,10 +53,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-import lightGallery from 'lightgallery'
+/*import lightGallery from 'lightgallery'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 import lgZoom from 'lightgallery/plugins/zoom'
-import lgVideo from 'lightgallery/plugins/video'
+import lgVideo from 'lightgallery/plugins/video'*/
 // SwiperCore.use([Navigation, Pagination])
 
 export default {
