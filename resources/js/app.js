@@ -9,6 +9,16 @@ require('./bootstrap')
 window.Vue = require('vue').default
 
 import AOS from 'aos'
+import MagicGrid from "magic-grid";
+import lightGallery from 'lightgallery';
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
+import lgVideo from 'lightgallery/plugins/video'
+
+import "lightgallery/css/lightgallery.css"
+import "lightgallery/css/lg-zoom.css"
+import "lightgallery/css/lg-thumbnail.css"
+import "lightgallery/css/lg-video.css"
 import 'simplebar'
 import 'simplebar/dist/simplebar.css'
 
@@ -40,6 +50,21 @@ AOS.init({
   once: true,
   easing: 'ease-out'
 })
+
+let magicGrid = new MagicGrid({
+  container: "#gridContainer", // Required. Can be a class, id, or an HTMLElement.
+  static: true, // Required for static content.
+  animate: true, // Optional.
+  // useMin: true,
+  gutter: 5,
+});
+
+lightGallery(document.getElementById('gridContainer'), {
+  plugins: [lgZoom, lgThumbnail, lgVideo],
+  speed: 500,
+});
+
+magicGrid.listen();
 
 // Handle go up btn
 function addGoTopButton () {

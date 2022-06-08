@@ -23,7 +23,8 @@
         </div>
 
         <div class="swiper-slide" v-for="img of images" :key="img.id">
-          <img :src="img.original_url" :alt="img.alt_text" class="">
+          <img :src="`/media/${img.id}/conversions/${img.name}-full-hd.jpg`" :alt="img.alt_text" class=""
+               loading="lazy">
           <div class="caption" v-if="img.caption">
             {{ img.caption }}
           </div>

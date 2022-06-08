@@ -9,7 +9,11 @@
     <div class="container">
       <div class="section-jumbotron position-relative">
         <div class="bg-jumbotron bg-end-75 bg-offset-top">
-          <img src="{{$service->getFirstMediaUrl("img_cover")}}" alt="{{$service->img_cover_alt}}" data-aos="fade-left">
+          {{ $service->getFirstMedia("img_cover")("hd", [
+              "alt"=>$service->img_cover_alt,
+              "class"=>"img-fluid",
+              "data-aos"=>"fade-left"
+            ]) }}
         </div>
 
         <div class="row">
@@ -37,12 +41,31 @@
 
   <div class="section py-0">
     @php
-      $gallery = $service->gallery->toArray();
+      //$gallery = $service->gallery->toArray();
+      $gallery = $service->getMedia("gallery");
       $videos = $service->videos->toArray();
     @endphp
 
-    <slider :slides-per-view='"auto"' :images="{{json_encode($gallery)}}"
-            :videos="{{json_encode($videos)}}"></slider>
+    <div class="" id="gridContainer">
+      @foreach($videos as $video)
+        <a style="max-width: 400px; aspect-ratio: 16/9"
+           data-lg-size="1280-720"
+           data-src="{{$video["video_link"]}}" class="d-inline-block"
+           data-poster="{{$video["thumb_high"]}}">
+          <img src="{{$video["thumb_high"]}}" alt="" class="w-100 h-100" style="object-fit: cover;">
+        </a>
+      @endforeach
+
+      @foreach($gallery as $image)
+        <a style="max-width: 400px;" href="{{$image->getFullUrl("full-hd")}}" class="d-inline-block">
+          {{$image('full-hd', [
+                  "alt"=> $image->getCustomProperty("alt"),
+                  "class"=> "w-100 h-100",
+                  "style"=> "object-fit: cover;",
+            ])}}
+        </a>
+      @endforeach
+    </div>
   </div>
 
   @include("components.banner-contact-us", ["bgColor" => "bg-primary"])

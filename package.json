@@ -27,6 +27,8 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.1.1",
         "aos": "^2.3.4",
+        "lightgallery": "^2.4.0",
+        "magic-grid": "^3.2.4",
         "simplebar": "^5.3.8",
         "swiper": "^8.2.2",
         "swiper-vue2": "^1.0.9"

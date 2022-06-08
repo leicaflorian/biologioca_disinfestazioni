@@ -111,6 +111,45 @@
         zoom: 10
       })
 
+      const citiesList = {!! json_encode($citiesList) !!};
+      const infowindow = new google.maps.InfoWindow({
+        content: ''
+      })
+      const markersList = {}
+
+      infowindow.addListener('closeclick', function () {
+        locationsList.querySelector('.active')?.classList.remove('active')
+      })
+
+      citiesList.forEach(city => {
+        const marker = new google.maps.Marker({
+          position: {
+            lat: parseFloat(city.coordinates.split(',')[0]),
+            lng: parseFloat(city.coordinates.split(',')[1])
+          },
+          map: map,
+          title: city.label
+        })
+
+        markersList[city.coordinates] = {
+          marker,
+          city
+        }
+
+        marker.addListener('click', function () {
+          locationsList.querySelector('.active')?.classList.remove('active')
+          const elToActivate = locationsList.querySelector(`[data-coordinates="${city.coordinates}"]`)
+          elToActivate.classList.add('active')
+
+          locationsList.scrollTo({
+            top: elToActivate.offsetTop - locationsList.offsetTop,
+            behavior: 'smooth'
+          })
+
+          openInfoWindow(marker, city)
+        })
+      })
+
       locationsList.addEventListener('click', function (e) {
         const coordinates = e.target.dataset.coordinates
         const latLng = new google.maps.LatLng(...coordinates.split(','))
@@ -122,15 +161,20 @@
         map.setCenter(latLng)
         map.setZoom(13)
 
-        if (!marker) {
-          marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          })
-        } else {
-          marker.setPosition(latLng)
-        }
+        const { marker, city } = markersList[coordinates]
+
+        openInfoWindow(marker, city)
       })
+
+      function openInfoWindow (marker, city) {
+        infowindow.setContent(`<div class="p-3 "><h6 class="mb-0 text-center">${city.label}</h6><p class="lead text-center mb-0">e limitrofi</p></div>`)
+
+        infowindow.open({
+          anchor: marker,
+          map,
+          shouldFocus: false
+        })
+      }
     }
 
     window.initMap = initMap

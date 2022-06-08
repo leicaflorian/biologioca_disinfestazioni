@@ -19,6 +19,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use function PHPUnit\Framework\isNull;
 
 class ServicesController extends Controller {
   
@@ -81,6 +82,9 @@ class ServicesController extends Controller {
     // Store the Service
     $service = Service::create($sanitized);
     
+    $this->updateMediaMetadata($service, $request->input("img_cover_meta"));
+    $this->updateMediaMetadata($service, $request->input("gallery_meta"));
+    
     if ($request->ajax()) {
       return ['redirect' => url('admin/services'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
     }
@@ -98,7 +102,10 @@ class ServicesController extends Controller {
    */
   public function show(Service $service) {
     $this->authorize('admin.service.show', $service);
-    
+
+//    $m = $service->getFirstMedia('gallery');
+
+//    $m()
     // TODO your code goes here
   }
   
@@ -112,7 +119,6 @@ class ServicesController extends Controller {
    */
   public function edit(Service $service) {
     $this->authorize('admin.service.edit', $service);
-    
     
     return view('admin.service.edit', [
       'service' => $service,
@@ -131,9 +137,11 @@ class ServicesController extends Controller {
     // Sanitize input
     $sanitized = $request->getSanitized();
     
-    
     // Update changed values Service
     $service->update($sanitized);
+    
+    $this->updateMediaMetadata($service, $request->input("img_cover_meta"));
+    $this->updateMediaMetadata($service, $request->input("gallery_meta"));
     
     if ($request->ajax()) {
       return [
@@ -184,5 +192,30 @@ class ServicesController extends Controller {
     });
     
     return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
+  }
+  
+  /**
+   *
+   * @param  Service  $service
+   * @param  array    $metadata
+   *
+   * @return void
+   */
+  private function updateMediaMetadata(Service $service, array|null $metadata) {
+    
+    if(isNull($metadata)) {
+      return;
+    }
+    
+    /**
+     * @var array{alt_text: string, caption: string, order: int} $meta
+     **/
+    foreach ($metadata as $id => $meta) {
+      $service->allMedia()->where('id', $id)->update([
+        "caption"  => $meta['caption'],
+        "order"    => $meta['order'],
+        "alt_text" => $meta['alt_text'],
+      ]);
+    }
   }
 }

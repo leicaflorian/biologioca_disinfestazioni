@@ -14,10 +14,18 @@ class HomeController extends Controller {
    */
   function index(): View|Factory|Application {
     $featuredServices = Service::where('featured', 1)->orderBy("order", "asc")->get();
-   
+    
     return view('index', [
       'featuredServices' => $featuredServices,
     ]);
+  }
+  
+  function demo() {
+    return  view("demo");
+  }
+  
+  function demo_store(Request $request) {
+    return $request->all();
   }
   
 }

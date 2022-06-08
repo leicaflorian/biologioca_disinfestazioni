@@ -21,10 +21,10 @@
 
           <div class="d-flex" style="gap: 2rem">
             <div data-aos="fade-right" data-aos-delay="300">
-              <a href="#" class="btn btn-outline-light outline-primary" >Scrivici</a>
+              <a href="{{route("contacts.index")}}" class="btn btn-outline-light outline-primary" >Scrivici</a>
             </div>
             <div data-aos="fade-right" data-aos-delay="200">
-              <a href="#" class="btn btn-primary btn-to-light" >Chiama</a>
+              <a href="tel:+39 351 7238237" class="btn btn-primary btn-to-light">Chiama</a>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="text-center" data-aos="fade-up">
-          <a href="{{ route('services.index') }}" class="btn btn-outline-primary" >Tutti i servizi</a>
+          <a href="{{ route('services.index') }}" class="btn btn-outline-primary">Tutti i servizi</a>
         </div>
       </div>
     </div>
