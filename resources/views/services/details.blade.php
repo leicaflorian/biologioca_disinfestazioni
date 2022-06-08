@@ -41,39 +41,20 @@
 
   <div class="section py-0">
     @php
-      $gallery = $service->getMedia("gallery");
+      $gallery = [];
+
+      foreach ($service->getMedia("gallery") as $media) {
+        $gallery[] =array_merge($media->toArray(), [
+            "full_hd_url"=>$media->getFullUrl("full-hd"),
+          ]);
+      }
+
       $videos = $service->videos->toArray();
     @endphp
 
-    <div class="" id="gridContainer">
-      @foreach($videos as $video)
-        <a style="max-width: 400px; aspect-ratio: 16/9"
-           data-lg-size="1280-720"
-           data-src="{{$video["video_link"]}}" class="d-inline-block"
-           data-poster="{{$video["thumb_high"]}}">
-          <img src="{{$video["thumb_high"]}}" alt="Anteprima video {{$video['title']}}" class="w-100 h-100"
-               style="object-fit: cover;">
-        </a>
-      @endforeach
+    <slider :slides-per-view='"auto"' :images="{{json_encode($gallery)}}"
+            :videos="{{json_encode($videos)}}"></slider>
 
-      @foreach($gallery as $image)
-        <a style="max-width: 400px;" href="{{$image->getFullUrl("full-hd")}}" class="d-inline-block">
-          {{$image('full-hd', [
-                  "alt"=> $image["alt_text"] ?? "Immagine relativa al servizio ". $service->title,
-                  "class"=> "w-100 h-100",
-                  "style"=> "object-fit: cover;",
-            ])}}
-        </a>
-      @endforeach
-
-      <div class="overlay">
-        <span class="display-2 mb-3">Caricamento in corso...</span>
-
-        <div class="spinner-grow text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    </div>
   </div>
 
   @include("components.banner-contact-us", ["bgColor" => "bg-primary"])

@@ -10,10 +10,7 @@ window.Vue = require('vue').default
 
 import AOS from 'aos'
 import MagicGrid from 'magic-grid'
-import lightGallery from 'lightgallery'
-import lgThumbnail from 'lightgallery/plugins/thumbnail'
-import lgZoom from 'lightgallery/plugins/zoom'
-import lgVideo from 'lightgallery/plugins/video'
+
 
 import 'lightgallery/css/lightgallery.css'
 import 'lightgallery/css/lg-zoom.css'
@@ -51,7 +48,7 @@ AOS.init({
   easing: 'ease-out'
 })
 
-setTimeout(() => {
+/*setTimeout(() => {
   let magicGrid = new MagicGrid({
     container: '#gridContainer', // Required. Can be a class, id, or an HTMLElement.
     static: true, // Required for static content.
@@ -71,7 +68,7 @@ setTimeout(() => {
   }, 200)
   
   document.querySelector('#gridContainer .overlay').classList.add('d-none')
-}, 1000)
+}, 1000)*/
 
 // Handle go up btn
 function addGoTopButton () {
