@@ -1,7 +1,7 @@
 @extends("layouts.main")
 
 @section("page-title", "Home")
-@section("page-description", "Siamo un azienda di Disinfestazione ed operiamo in tutto il gran parte del territorio Veneto! Ci occupiamo di tutti i tipi di infestanti, piccoli e grandi!")
+@section("page-description", "Siamo un azienda di Disinfestazione ed operiamo in gran parte del territorio Veneto! Ci occupiamo di tutti i tipi di infestanti, piccoli e grandi!")
 
 @section("content")
   {{--  Jumbotron --}}
@@ -12,13 +12,17 @@
 
     <div class="container text-light">
       <div class="row">
-        <div class="col col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+        <div class="col col-md-8 col-lg-7 col-xl-6 col-xxl-5">
           <h1 class="section-title" data-aos="fade-right">DISINFESTIAMO IN MODO RESPONSABILE</h1>
-          <h6 class="lead fw-normal" style="line-height: inherit;" data-aos="fade-right" data-aos-delay="100">
-            Rispettare e salvaguardare l'ambiente, ma allo stesso tempo essere efficaci: é possibile? Con Biologica
-            Disinfestazioni sì! Proponiamo soluzioni mirate ed efficaci, prediligendo prodotti con un minor impatto
-            ambientale e tecniche sempre all’avanguardia.
-          </h6>
+          <p class="lead" data-aos="fade-right" data-aos-delay="100">
+            Biologica Disinfestazioni propone soluzioni mirate ed efficaci per risolvere qualsiasi problema legato ad
+            insetti, ma anche legato alle normative vigenti in materia di HACCP e Sanificazione, prediligendo prodotti
+            con un minor impatto ambientale e tecniche sempre all’avanguardia.
+          </p>
+          <p class="lead" data-aos="fade-right" data-aos-delay="300">
+            Operiamo in gran parte del territorio Veneto, in particolare nelle zone di Bassano del Grappa, Marostica, Tezze sul Brenta, Vicenza, ma anche in provincia di Padova e Treviso.
+          </p>
+
 
           <div class="d-flex" style="gap: 2rem">
             <div data-aos="fade-right" data-aos-delay="300">
@@ -79,8 +83,10 @@
         <div class="col mb-4 mb-lg-0">
           {{-- Sfondo immagini --}}
           <div class="offset-img-container ">
-            <img src="{{asset('images/con_cura_1.jpeg')}}" alt="Esposizione di vari tipi di insetti" data-aos="fade-right">
-            <img src="{{asset('images/con_cura_2.jpeg')}}" alt="Analisi sotto lente di ingrandimento di uno scarafaggio" data-aos="fade-up">
+            <img src="{{asset('images/con_cura_1.jpeg')}}" alt="Esposizione di vari tipi di insetti"
+                 data-aos="fade-right">
+            <img src="{{asset('images/con_cura_2.jpeg')}}" alt="Analisi sotto lente di ingrandimento di uno scarafaggio"
+                 data-aos="fade-up">
           </div>
         </div>
         <div class="col-lg-5">
