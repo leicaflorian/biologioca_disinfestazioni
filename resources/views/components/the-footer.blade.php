@@ -8,13 +8,17 @@
         </div>
         <div class="col-md-5 col-lg-4 text-center">
           <ul class="list-unstyled list-contacts text-start justify-content-center justify-content-md-start mb-0">
-            <li class="list-item-with-icon"><a href="tel:+39 351 7238237" data-aos="fade-up">
+            <li class="list-item-with-icon">
+              <a href="tel:+39 351 7238237" data-aos="fade-up">
                 <i class="fa-solid fa-phone icon-rounded icon-white"></i>
-                +39 351 7238237</a></li>
-            <li class="list-item-with-icon"><a href="mailto:info@biologicadisinfestazioni.it?subject=Informazioni"
-                                               data-aos="fade-up" data-aos-delay="100">
+                +39 351 7238237</a>
+            </li>
+            <li class="list-item-with-icon">
+              <a href="mailto:info@biologicadisinfestazioni.it?subject=Informazioni"
+                 data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-envelope icon-rounded icon-white"></i>
-                info@leicaflorianrobert.dev</a></li>
+                info@biologicadisinfestazioni.it</a>
+            </li>
             <li class="list-item-with-icon" data-aos="fade-up" data-aos-delay="200">
               <a href="javascript:void(0)">
                 <i class="fa-solid fa-hashtag icon-rounded icon-white"></i>

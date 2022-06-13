@@ -23,7 +23,7 @@
             <li class="list-item-with-icon" data-aos="fade-right" data-aos-delay="400">
               <a href="mailto:info@biologicadisinfestazioni.it?subject=Informazioni">
                 <i class="fa-solid fa-envelope icon-rounded icon-primary icon-lg"></i>
-                info@leicaflorianrobert.dev</a></li>
+                info@biologicadisinfestazioni.it</a></li>
           </ul>
         </div>
 
