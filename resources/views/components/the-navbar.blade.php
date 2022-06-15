@@ -15,26 +15,33 @@
           <a class="nav-link {{Route::currentRouteName() === 'home' ? 'active' : null }}" aria-current="page"
              href="{{route('home')}}">Home</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle {{str_starts_with(Route::currentRouteName(), "services") ? 'active' : null }}"
-             id="navbarDropdown" role="button"
-             data-bs-toggle="dropdown"
-             aria-expanded="false">
-            Servizi
-          </a>
-          <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
-            @foreach($menuEntries as $entry)
+        @if(isset($menuEntries))
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle {{str_starts_with(Route::currentRouteName(), "services") ? 'active' : null }}"
+               id="navbarDropdown" role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
+              Servizi
+            </a>
+
+            <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+              @foreach($menuEntries as $entry)
+                <li>
+                  <a class="dropdown-item {{ key_exists("service", Route::current()->parameters) && Route::current()->parameters["service"] === $entry->slug ? 'active': null }}"
+                     href="{{route('services.details', $entry->slug)}}">{{$entry->title}}</a>
+                </li>
+              @endforeach
               <li>
-                <a class="dropdown-item {{ key_exists("service", Route::current()->parameters) && Route::current()->parameters["service"] === $entry->slug ? 'active': null }}"
-                   href="{{route('services.details', $entry->slug)}}">{{$entry->title}}</a>
+                <hr class="dropdown-divider">
               </li>
-            @endforeach
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="{{route('services.index')}}">Tutti i servizi</a></li>
-          </ul>
-        </li>
+              <li><a class="dropdown-item" href="{{route('services.index')}}">Tutti i servizi</a></li>
+            </ul>
+          </li>
+        @else
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('services.index')}}">Tutti i servizi</a>
+          </li>
+        @endif
         <li class="nav-item">
           <a class="nav-link {{Route::currentRouteName() === 'contacts.index' ? 'active' : null }}"
              href="{{route('contacts.index')}}">Contatti</a>
