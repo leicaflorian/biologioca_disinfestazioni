@@ -16,10 +16,10 @@ class ServiceController extends Controller {
    * @return Application|Factory|View
    */
   function index(): View|Factory|Application {
-    $services    = Service::orderBy("order")->get();
+    $services = Service::orderBy("order")->get();
     
     return view('services.index', [
-      'services'    => $services
+      'services' => $services
     ]);
   }
   
@@ -30,11 +30,17 @@ class ServiceController extends Controller {
    *
    * @return Application|Factory|View
    */
-  function details($service): View|Factory|Application {
-    $service       = Service::where('slug', $service)->first();
+  function details($service_slug): View|Factory|Application {
+    
+    $service = Service::where('slug', $service_slug)->first();
+    
+    if ( !$service || $service && !$service->has_page) {
+      abort(404);
+    }
+    
     $otherServices = Service::where('slug', '!=', $service->slug)
       ->where("has_page", 1)->inRandomOrder()->limit(3)->get();
-  
+    
     return view('services.details', [
       'service'       => $service,
       'otherServices' => $otherServices
