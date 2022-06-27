@@ -25,7 +25,7 @@ class Controller extends BaseController {
     $resp = parent::callAction($method, $parameters);
     
     if (isset($resp) && !is_array($resp) && is_object($resp) && get_class($resp) === "Illuminate\View\View") {
-      $menuEntries = Service::where('has_page', 1)->orderBy("title")->get();
+      $menuEntries = Service::where('featured', 1)->orderBy("title")->get();
       
       $resp["menuEntries"] = $menuEntries;
     }

@@ -19,7 +19,7 @@
     <h5 class="card-title fs-6 text-start mb-4">{{$service->title}}</h5>
 
     <div class="card-text text-start text-secondary overflow-auto" data-simplebar
-         style="max-height: 200px">{!! $service->description !!}</div>
+         style="max-height: 200px">{!! $service->description_short !!}</div>
 
     @if($service->has_page)
       <div class="border-top text-start pt-3 mt-3">

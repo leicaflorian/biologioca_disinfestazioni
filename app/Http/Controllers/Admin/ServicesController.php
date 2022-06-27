@@ -37,10 +37,14 @@ class ServicesController extends Controller {
       $request,
       
       // set columns to query
-      ['id', 'name', 'title', 'description', 'description_long', 'description_short', 'img_cover_alt', 'has_page', 'featured', 'order'],
+      ['id', 'slug', 'name', 'title', 'meta_title',
+        'second_title', 'description', 'description_short', 'meta_description',
+        'second_content', 'img_cover_alt', 'has_page', 'featured', 'order'],
       
       // set columns to searchIn
-      ['id', 'slug', 'name', 'title', 'description', 'description_long', 'description_short', 'img_cover_alt']
+      ['id', 'slug', 'name', 'title', 'meta_title',
+        'second_title', 'description', 'description_short', 'meta_description',
+        'second_content', 'img_cover_alt']
     );
     
     if ($request->ajax()) {
@@ -142,7 +146,7 @@ class ServicesController extends Controller {
     
     $this->updateMediaMetadata($service, $request->input("img_cover_meta"));
     $this->updateMediaMetadata($service, $request->input("gallery_meta"));
-  
+    
     if ($request->ajax()) {
       return [
         'redirect' => url('admin/services'),
@@ -202,7 +206,7 @@ class ServicesController extends Controller {
    * @return void
    */
   private function updateMediaMetadata(Service $service, array|null $metadata) {
-    if(is_null($metadata)) {
+    if (is_null($metadata)) {
       return;
     }
     

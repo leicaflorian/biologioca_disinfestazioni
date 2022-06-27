@@ -22,6 +22,16 @@
   </div>
 </div>
 
+<h5 class="border-bottom mb-4">Meta Info</h5>
+@include("admin.components.form-text", [
+  "name"=> "meta_title",
+])
+@include("admin.components.form-textarea", [
+  "name"=> "meta_description",
+])
+
+<h5 class="border-bottom mb-4">Service Info</h5>
+
 <div class="form-group row align-items-center"
      :class="{'has-danger': errors.has('title'), 'has-success': fields.title && fields.title.valid }">
   <label for="title" class="col-form-label text-md-right"
@@ -53,35 +63,21 @@
   </div>
 </div>
 
-<div class="form-group row align-items-center"
-     :class="{'has-danger': errors.has('description_long'), 'has-success': fields.description_long && fields.description_long.valid }">
-  <label for="description_long" class="col-form-label text-md-right"
-         :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.service.columns.description_long') }}</label>
-  <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-    <input type="text" v-model="form.description_long" v-validate="''" @input="validate($event)" class="form-control"
-           :class="{'form-control-danger': errors.has('description_long'), 'form-control-success': fields.description_long && fields.description_long.valid}"
-           id="description_long" name="description_long"
-           placeholder="{{ trans('admin.service.columns.description_long') }}">
-    <div v-if="errors.has('description_long')" class="form-control-feedback form-text" v-cloak>@{{
-      errors.first('description_long') }}
-    </div>
-  </div>
-</div>
+@include("admin.components.form-textarea", [
+  "name"=> "description_short",
+])
 
-<div class="form-group row align-items-center"
-     :class="{'has-danger': errors.has('description_short'), 'has-success': fields.description_short && fields.description_short.valid }">
-  <label for="description_short" class="col-form-label text-md-right"
-         :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.service.columns.description_short') }}</label>
-  <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-    <input type="text" v-model="form.description_short" v-validate="''" @input="validate($event)" class="form-control"
-           :class="{'form-control-danger': errors.has('description_short'), 'form-control-success': fields.description_short && fields.description_short.valid}"
-           id="description_short" name="description_short"
-           placeholder="{{ trans('admin.service.columns.description_short') }}">
-    <div v-if="errors.has('description_short')" class="form-control-feedback form-text" v-cloak>@{{
-      errors.first('description_short') }}
-    </div>
-  </div>
-</div>
+<h5 class="border-bottom mb-4">Secondary content</h5>
+@include("admin.components.form-text", [
+  "name"=> "second_title",
+])
+
+@include("admin.components.form-textarea", [
+  "name"=> "second_content",
+])
+
+
+<h5 class="border-bottom mb-4">Extra data</h5>
 
 <div class="form-check row"
      :class="{'has-danger': errors.has('has_page'), 'has-success': fields.has_page && fields.has_page.valid }">

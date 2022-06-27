@@ -4,8 +4,10 @@
 
 <div class="section {{$bgColor}}">
   <div class="container">
-    <h3 class="section-title mb-0" data-aos="fade-right">Perchè scegliere noi?</h3>
-    <h6 class="text-secondary mb-5" data-aos="fade-right" data-aos-delay="200">Ecco 4 buoni motivi</h6>
+    <h2 class="section-title" data-aos="fade-right">{{  $title ?? 'Perchè scegliere noi?'  }}</h2>
+    <div class="lead text-secondary mb-5" data-aos="fade-right" data-aos-delay="200">
+      {!! $text ?? 'Ecco 4 buoni motivi' !!}
+    </div>
 
     <div class="row row-cols-1 row-cols-md-2 g-4 g-lg-5">
       <div class="col" data-aos="fade-up">

@@ -57,10 +57,9 @@
 
   </div>
 
+  @include("components.section-why-us", ["title"=> $service->second_title, "text"=>$service->second_content])
+
   @include("components.banner-contact-us", ["bgColor" => "bg-primary"])
-
-  @include("components.section-why-us")
-
 
   <div class="section">
     <div class="container">
