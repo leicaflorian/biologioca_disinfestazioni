@@ -1,7 +1,7 @@
 @extends("layouts.main")
 
-@section("page-title", "Contatti")
-@section("page-description", "Contattataci per avere un preventivo gratuito o per qualsiasi altra informazione sugli infestanti che ti disturbano.")
+@section("page-title", "Contatti | Biologica Disinfestazioni")
+@section("page-description", "Contattataci per avere un preventivo gratuito o per qualsiasi altra informazione sugli infestanti che ti disturbano. --> 351 7238237")
 
 @section("content")
   <div class="section">

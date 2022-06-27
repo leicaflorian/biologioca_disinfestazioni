@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('bootstrap');
+require('bootstrap')
 
 window.Vue = require('vue').default
 
@@ -75,6 +75,15 @@ function addGoTopButton () {
     const scrollPercentage = scrollTop * 100 / scrollHeight
     
     btn.classList.toggle('go-up-btn-hidden', scrollPercentage < 15)
+  })
+  
+  btn.addEventListener('click', (e) => {
+    e.preventDefault()
+    
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   })
   
 }

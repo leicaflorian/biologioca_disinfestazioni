@@ -114,6 +114,19 @@
       bottom: calc(0px - var(--section-padding));
       right: 0;
     }
+
+    @include media-breakpoint-up(lg) {
+      min-height: unset;
+      height: calc(50% + var(--section-padding));
+      width: 100%;
+
+      &:first-child {
+      }
+
+      &:last-child {
+      }
+
+    }
   }
 
   @include media-breakpoint-down(lg) {

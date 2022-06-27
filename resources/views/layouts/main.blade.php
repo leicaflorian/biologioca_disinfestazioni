@@ -14,7 +14,7 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-  <title>@yield("page-title") | Biologica Disinfestazioni</title>
+  <title>@yield("page-title")</title>
   <meta name="description" content="@yield("page-description")">
 
   @if(env("APP_INCLUDE_GTAGS") === true)
@@ -61,7 +61,7 @@
 
 @include('components.the-footer')
 
-<a href="" class="btn btn-primary go-up-btn go-up-btn-hidden">
+<a href="#" class="btn btn-primary go-up-btn go-up-btn-hidden">
   <i class="fas fa-chevron-up fa-xl"></i>
 </a>
 

@@ -1,7 +1,7 @@
 @extends("layouts.main")
 
-@section("page-title", "Home")
-@section("page-description", "Siamo un azienda di Disinfestazione ed operiamo in gran parte del territorio Veneto! Ci occupiamo di tutti i tipi di infestanti, piccoli e grandi!")
+@section("page-title", "Disinfestazioni Veneto: affidati a Biologica Disinfestazioni")
+@section("page-description", "Proponiamo soluzioni mirate per disinfestazioni in Veneto di ogni genere, normative in materia di HACCP e Sanificazione di locali commerciali e non.")
 
 @section("content")
   {{--  Jumbotron --}}
@@ -13,14 +13,15 @@
     <div class="container text-light">
       <div class="row">
         <div class="col col-md-8 col-lg-7 col-xl-6 col-xxl-5">
-          <h1 class="section-title" data-aos="fade-right">DISINFESTIAMO IN MODO RESPONSABILE</h1>
+          <h1 class="section-title" data-aos="fade-right">DISINFESTIAMO IN MODO RESPONSABILE A VICENZA</h1>
           <p class="lead" data-aos="fade-right" data-aos-delay="100">
             Biologica Disinfestazioni propone soluzioni mirate ed efficaci per risolvere qualsiasi problema legato ad
-            insetti, ma anche legato alle normative vigenti in materia di HACCP e Sanificazione, prediligendo prodotti
-            con un minor impatto ambientale e tecniche sempre all’avanguardia.
+            insetti, normative vigenti in materia di HACCP e Sanificazione, prediligendo prodotti con minore impatto
+            ambientale e tecniche di intervento all’avanguardia.
           </p>
           <p class="lead" data-aos="fade-right" data-aos-delay="300">
-            Operiamo in gran parte del territorio Veneto, in particolare nelle zone di Bassano del Grappa, Marostica, Tezze sul Brenta, Vicenza, ma anche in provincia di Padova e Treviso.
+            Operiamo in gran parte del territorio Veneto, in particolare nelle zone di Bassano del Grappa, Marostica,
+            Tezze sul Brenta, Vicenza, ma anche in provincia di Padova e Treviso.
           </p>
 
 
@@ -42,39 +43,39 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5">
-          <h3 class="section-title" data-aos="fade-right">Alcuni dei nostri servizi più richiesti</h3>
+          <h2 class="section-title" data-aos="fade-right">Alcuni dei nostri servizi più richiesti</h2>
         </div>
+      </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 g-3 g-md-4 mb-5">
-          @foreach($featuredServices as $key=>$service)
+      <p class="lead mb-5" data-aos="fade-left">In qualità di <strong>esperti nel controllo dei parassiti</strong>,
+        siamo in grado di
+        controllare ed eliminare
+        con successo varie infestazioni di insetti, roditori e parassiti in tutto il Veneto e nelle zone
+        circostanti. In particolar modo ci occupiamo di realizzare <strong>Disinfestazioni a Vicenza</strong> per
+        scongiurare il
+        proliferare eccessivo di colonie indesiderate in ambienti residenziali, commerciali, industriali e di
+        stoccaggio. Siamo al tuo fianco per risolvere problemi così spiacevoli come
+        le infestazioni alla radice ed evitare che si ripresentino nel tempo.</p>
 
-            <div class="col" data-aos="fade-up" data-aos-delay="{{$key * 100}}">
-              @include("components.card-service")
-            </div>
-          @endforeach
-        </div>
+      <div class="row row-cols-1 row-cols-sm-2 g-3 g-md-4 mb-5">
+        @foreach($featuredServices as $key=>$service)
 
-        <div class="text-center" data-aos="fade-up">
-          <a href="{{ route('services.index') }}" class="btn btn-outline-primary">Tutti i servizi</a>
-        </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="{{$key * 100}}">
+            @include("components.card-service")
+          </div>
+        @endforeach
+
+
+      </div>
+
+
+      <div class="text-center" data-aos="fade-up">
+        <a href="{{ route('services.index') }}" class="btn btn-outline-primary">Tutti i servizi</a>
       </div>
     </div>
   </div>
 
-  {{-- Banner risolvi subito --}}
-  {{--  <div class="section section-dark bg-dark section-bg-leafs">
-      <div class="container text-center">
-        <h3 class="section-title">RISOLVI SUBITO IL TUO PROBLEMA!
-        </h3>
-        <a href="#" class="btn btn-primary btn-to-light">Chiamaci</a>
-      </div>
-    </div>--}}
-
   @include("components.banner-contact-us", ["bgColor"=> "bg-primary"])
-
-  {{--  Banner con le nostre aziende  --}}
-
-  {{-- Banner con le nostre esperienze --}}
 
   {{-- Lavoro con passione --}}
   <div class="section">
@@ -89,45 +90,24 @@
                  data-aos="fade-up">
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-7">
           <h2 class="section-title" data-aos="fade-right">
             Biologica Disinfestazioni lavora con passione, cura e professionalità!
           </h2>
 
-          <p class="lead" data-aos="fade-right" data-aos-delay="100">Il nostro non é solo un lavoro ma prima di tutto
-            una passione.</p>
+          <p class="lead mb-5" data-aos="fade-right" data-aos-delay="100">
+            Il nostro non é solo un lavoro ma prima di tutto una passione: grazie al nostro impegno nel realizzare
+            <strong>disinfestazioni in Veneto</strong> abbiamo aiutato decine di committenti a liberarsi da insetti,
+            roditori e parassiti
+            indesiderati, <strong>rendendo il nostro territorio un posto più sicuro</strong>. Il nostro impegno va in
+            favore di famiglie,
+            professionisti ed aziende produttrici per dare serenità quotidiana a chi vive le città.
+          </p>
 
-          <div class="row row-cols-1 row-cols-sm-2 g-4 g-md-5">
-            <div class="col" data-aos="fade-up" data-aos-delay="200">
-              <div class="card-badge ms-4">
-                <i class="fa-solid fa-award icon-rounded-offset fs-4 me-2 text-primary"></i>
-                <h6 class="card-badge-text">Alta Qualità</h6>
-              </div>
-            </div>
-            <div class="col" data-aos="fade-up" data-aos-delay="300">
-              <div class="card-badge ms-4">
-                <i class="fa-solid fa-house-circle-check icon-rounded-offset fs-4 me-2 text-primary"></i>
-                <h6 class="card-badge-text">Sicurezza</h6>
-              </div>
-            </div>
-            <div class="col" data-aos="fade-up" data-aos-delay="400">
-              <div class="card-badge ms-4">
-                <i class="fa-solid fa-leaf icon-rounded-offset fs-4 me-2 text-primary"></i>
-                <h6 class="card-badge-text">Eco-friendly</h6>
-              </div>
-            </div>
-            <div class="col" data-aos="fade-up" data-aos-delay="500">
-              <div class="card-badge ms-4">
-                <i class="fa-solid fa-hourglass icon-rounded-offset fs-4 me-2 text-primary"></i>
-                <h6 class="card-badge-text">Tempestività</h6>
-              </div>
-            </div>
-          </div>
+          <x-company-principles :compact="true"></x-company-principles>
         </div>
       </div>
     </div>
   </div>
 
-  {{-- Section contatti --}}
-  {{--  @include("components.section-contact")--}}
 @endsection
