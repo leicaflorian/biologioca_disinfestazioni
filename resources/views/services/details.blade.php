@@ -1,7 +1,7 @@
 @extends("layouts.main")
 
-@section("page-title", $service->name)
-@section("page-description", $service->description_short)
+@section("page-title", $service->meta_title)
+@section("page-description", $service->meta_description)
 @section("og_type", "product")
 
 @section("content")
