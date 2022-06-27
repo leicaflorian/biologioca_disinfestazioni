@@ -1,7 +1,7 @@
 @extends("layouts.main")
 
 @section("page-title", $service->meta_title)
-@section("page-description", $service->meta_description)
+@section("page-description", strip_tags($service->meta_description))
 @section("og_type", "product")
 
 @section("content")
