@@ -3,4 +3,4 @@
 npm run prod
 git add .
 git commit -m "Deploy"
-git push origin master
+git push origin main
