@@ -39,7 +39,13 @@
 
   @include("components.ldJson")
 
+  @yield("header_scripts")
+
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+  @if(isset($recaptchaKey))
+    <script src="https://www.google.com/recaptcha/api.js?render={{$recaptchaKey}}"></script>
+  @endif
 </head>
 <body>
 @if(env("APP_INCLUDE_GTAGS") === true)

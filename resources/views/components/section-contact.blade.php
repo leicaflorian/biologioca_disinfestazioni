@@ -26,12 +26,14 @@
                 info@biologicadisinfestazioni.it</a></li>
           </ul>
         </div>
-
       </div>
       <div class="col-lg">
-        @if(!session()->has('formSubmitted'))
-          <form action="{{route('contacts.store') . '#contacts-section'}}" method="post" class="needs-validation">
+        @if(!session()->has('formSubmitted') && !session()->has('recaptchaError'))
+          <form action="{{route('contacts.store') . '#contacts-section'}}" method="post" class="needs-validation"
+                id="contacts-form">
             @csrf
+
+            <input type="hidden" name="_recaptchaToken">
 
             <div class="row">
               <div class="col-12 col-sm-6">
@@ -108,22 +110,65 @@
               </div>
             </div>
 
+            @error("recaptcha")
+            <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+
             <div data-aos="fade-up" data-aos-delay="200">
-              <button class="btn btn-primary">Invia</button>
+              <button class="btn btn-primary" type="submit" id="contact-form-submit-btn">Invia</button>
             </div>
           </form>
         @else
           <div class="d-flex flex-column align-items-center">
-            <div
-                class="border border-2 border-primary rounded-circle d-flex justify-content-center align-items-center mb-5"
-                style="width: 100px; height: 100px">
-              <i class="fa-solid fa-check fa-5x text-primary"></i>
+            <div data-aos="fade-up" data-aos-delay="200"
+                 class="border border-2 {{ session()->has('recaptchaError') ? 'border-danger' : 'border-primary'}} rounded-circle d-flex justify-content-center align-items-center mb-5"
+                 style="width: 100px; height: 100px">
+              @if(session()->has('recaptchaError'))
+                <i class="fa-solid fa-times fa-5x text-danger"></i>
+              @else
+                <i class="fa-solid fa-check fa-5x text-primary"></i>
+              @endif
             </div>
 
-            <div class="display-5 text-center">Grazie per averci contattato! Vi risponderemo il prima possibile!</div>
+            <div class="display-5 text-center" data-aos="fade-up" data-aos-delay="400">
+              @if(session()->has('recaptchaError'))
+                Sembra non sia possibile procedere con la richiesta. Per favore ricaricare la pagina e riprovare.
+              @else
+                Grazie per averci contattato! Vi risponderemo il prima possibile!
+              @endif
+            </div>
           </div>
         @endif
       </div>
     </div>
   </div>
 </div>
+
+@section("scripts")
+  @parent
+
+  <script>
+    const form = document.getElementById('contacts-form')
+    /**
+     * @type {HTMLButtonElement}
+     */
+    const submitBtn = document.getElementById('contact-form-submit-btn')
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault()
+
+      submitBtn.innerHTML = ['<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>',
+        'Invio in corso...'].join('\n')
+      submitBtn.disabled = true
+
+      grecaptcha.ready(function () {
+        grecaptcha.execute('{{$recaptchaKey}}', { action: 'submit' })
+          .then(function (token) {
+
+            form.elements._recaptchaToken.value = token
+            form.submit()
+          })
+      })
+    })
+  </script>
+@endsection

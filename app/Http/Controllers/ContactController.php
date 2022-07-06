@@ -10,6 +10,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller {
@@ -25,6 +26,17 @@ class ContactController extends Controller {
   }
   
   function store(StoreContact $request) {
+    $recaptchaToken = $request->input('_recaptchaToken');
+    
+    $resp = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
+      "secret"   => env("RECAPTCHA_SECRET"),
+      "response" => $recaptchaToken
+    ]);
+    
+    if ( !$resp->json()["success"]) {
+      return redirect()->back()->with("recaptchaError", true);
+    }
+    
     $data       = $request->validated();
     $newContact = Contact::create($data);
     

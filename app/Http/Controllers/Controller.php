@@ -28,6 +28,7 @@ class Controller extends BaseController {
       $menuEntries = Service::where('featured', 1)->orderBy("title")->get();
       
       $resp["menuEntries"] = $menuEntries;
+      $resp["recaptchaKey"] = env("RECAPTCHA_KEY");
     }
     
     return $resp;
