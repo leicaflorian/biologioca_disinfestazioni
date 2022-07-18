@@ -33,6 +33,17 @@
         f.parentNode.insertBefore(j, f)
       })(window, document, 'script', 'dataLayer', 'GTM-KLVCK69')</script>
     <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Ads: 10950377080 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10950377080"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-10950377080');
+    </script>
+    <!-- End Global site tag (gtag.js) -->
   @endif
 
   @include("components.social-media-tags")

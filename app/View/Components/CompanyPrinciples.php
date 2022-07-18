@@ -23,7 +23,7 @@ class CompanyPrinciples extends Component {
     [
       "icon"      => "fa-solid fa-leaf",
       "title"     => "Eco-friendly",
-      "shortText" => "usiamo prevalentemente prodotti che non nuociono all'ambiente"],
+      "shortText" => "usiamo prodotti e tecniche con minore impatto ambientale"],
     [
       "icon"      => "fa-solid fa-hourglass",
       "title"     => "Tempestività degli interventi",

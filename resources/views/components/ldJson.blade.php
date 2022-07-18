@@ -60,12 +60,12 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "url": "http://www.biologicadisinfestazioni.it/servizi/disinfestazione"
+            "url": "https://www.biologicadisinfestazioni.it/servizi/disinfestazione"
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "url": "http://www.biologicadisinfestazioni.it/servizi/haccp"
+            "url": "https://www.biologicadisinfestazioni.it/servizi/haccp"
           },
           {
             "@type": "ListItem",
@@ -80,12 +80,12 @@
           {
             "@type": "ListItem",
             "position": 6,
-            "url": "http://www.biologicadisinfestazioni.it/servizi/tarli-e-acari-da-legno"
+            "url": "https://www.biologicadisinfestazioni.it/servizi/tarli-e-acari-da-legno"
           },
           {
             "@type": "ListItem",
             "position": 7,
-            "url": "http://www.biologicadisinfestazioni.it/servizi/topi-e-ratti"
+            "url": "https://www.biologicadisinfestazioni.it/servizi/topi-e-ratti"
           }
         ]
       }

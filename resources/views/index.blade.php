@@ -3,6 +3,12 @@
 @section("page-title", "Disinfestazioni Veneto: affidati a Biologica Disinfestazioni")
 @section("page-description", "Proponiamo soluzioni mirate per disinfestazioni in Veneto di ogni genere, normative in materia di HACCP e Sanificazione di locali commerciali e non.")
 
+@section("header_script")
+  <script>
+    gtag('event', 'conversion', { 'send_to': 'AW-10950377080/vOVxCKaorM4DEPj8xeUo' })
+  </script>
+@endsection
+
 @section("content")
   {{--  Jumbotron --}}
   <div class="section section-jumbotron section-dark">
