@@ -15,7 +15,7 @@ class CompanyPrinciples extends Component {
     [
       "icon"      => "fa-solid fa-award",
       "title"     => "Trattamenti rapidi ed efficaci",
-      "shortText" => "mirati e appropriati per intervenire sulla tua situazione"],
+      "shortText" => "mirati e specifici per intervenire sulla tua situazione"],
     [
       "icon"      => "fa-solid fa-house-circle-check",
       "title"     => "Monitoraggio e consigli tecnici",
@@ -27,7 +27,7 @@ class CompanyPrinciples extends Component {
     [
       "icon"      => "fa-solid fa-hourglass",
       "title"     => "Tempestività degli interventi",
-      "shortText" => "è tutto sotto controllo fin dal momento della tua chiamata"],
+      "shortText" => "urgenti, programmati e periodici a seconda del bisogno"],
   ];
   
   /**

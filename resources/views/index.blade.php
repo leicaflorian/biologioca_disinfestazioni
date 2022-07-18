@@ -102,12 +102,12 @@
           </h2>
 
           <p class="lead mb-5" data-aos="fade-right" data-aos-delay="100">
-            Il nostro non é solo un lavoro ma prima di tutto una passione: grazie al nostro impegno nel realizzare
+            Il nostro non é solo un lavoro ma prima di tutto una passione: grazie al nostro impegno nel effettuare
             <strong>disinfestazioni in Veneto</strong> abbiamo aiutato decine di committenti a liberarsi da insetti,
             roditori e parassiti
             indesiderati, <strong>rendendo il nostro territorio un posto più sicuro</strong>. Il nostro impegno va in
             favore di famiglie,
-            professionisti ed aziende produttrici per dare serenità quotidiana a chi vive le città.
+            professionisti ed aziende produttrici per dare serenità quotidiana e sicurezza a chi vive le città.
           </p>
 
           <x-company-principles :compact="true"></x-company-principles>
