@@ -37,12 +37,16 @@
     <!-- Global site tag (gtag.js) - Google Ads: 10950377080 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10950377080"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.dataLayer = window.dataLayer || []
 
-      gtag('config', 'AW-10950377080');
+      function gtag () {dataLayer.push(arguments)}
+
+      gtag('js', new Date())
+      gtag('config', 'AW-10950377080')
+      // <!-- Event snippet for Website traffic conversion page -->
+      gtag('event', 'conversion', { 'send_to': 'AW-10950377080/vOVxCKaorM4DEPj8xeUo' })
     </script>
+
     <!-- End Global site tag (gtag.js) -->
   @endif
 

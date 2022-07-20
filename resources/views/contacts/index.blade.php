@@ -3,12 +3,6 @@
 @section("page-title", "Contatti | Biologica Disinfestazioni")
 @section("page-description", "Contattataci per avere un preventivo gratuito o per qualsiasi altra informazione sugli infestanti che ti disturbano. --> 351 7238237")
 
-@section("header_script")
-  <script>
-    gtag('event', 'conversion', { 'send_to': 'AW-10950377080/vOVxCKaorM4DEPj8xeUo' })
-  </script>
-@endsection
-
 @section("content")
   <div class="section">
     <div class="container">
