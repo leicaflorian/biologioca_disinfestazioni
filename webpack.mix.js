@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -13,15 +13,14 @@ const mix = require('laravel-mix');
 mix.disableNotifications()
 
 mix.js('resources/js/app.js', 'public/js')
-    .vue()
-    .sass('resources/sass/app.scss', 'public/css');
-
+  .vue()
+  .sass('resources/sass/app.scss', 'public/css')
 
 mix
-  .js(["resources/js/admin/admin.js"], "public/js")
-  .sass("resources/sass/admin/admin.scss", "public/css")
-  .vue();
+  .js(['resources/js/admin/admin.js'], 'public/js')
+  .sass('resources/sass/admin/admin.scss', 'public/css')
+  .vue()
 
-if (mix.inProduction()) {
-  mix.version();
-}
+// if (mix.inProduction()) {
+mix.version()
+// }
