@@ -1,0 +1,18 @@
+#contact-us-banner {
+  &.isSticky {
+    --section-padding: 1rem;
+    margin-bottom: calc(10vh * 2);
+    z-index: 99;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: calc(18vh * 2);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .section-title {
+      font-size: calc(1.4rem + 1.5vw);
+      margin-bottom: 1.3rem;
+    }
+  }
+}

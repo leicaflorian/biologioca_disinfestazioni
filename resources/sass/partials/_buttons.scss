@@ -79,3 +79,18 @@
     transform: translateX(calc(100% + 1.5rem));
   }
 }
+
+.btn-mobile-only-icon {
+  @include media-breakpoint-down(md) {
+    --bs-btn-padding-x: 1.5rem;
+    --bs-btn-padding-y: .5rem;
+
+    i {
+      font-size: calc(1.4rem + 1.5vw);
+    }
+
+    :not(i) {
+      display: none;
+    }
+  }
+}

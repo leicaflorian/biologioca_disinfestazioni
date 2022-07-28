@@ -20,3 +20,8 @@
 @import "./partials/footer";
 @import "./partials/forms";
 @import "./partials/slider";
+@import "./partials/banners";
+
+.grecaptcha-badge {
+  display: none !important;
+}

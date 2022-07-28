@@ -56,7 +56,7 @@
 
   @yield("header_scripts")
 
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
   @if(isset($recaptchaKey))
     <script src="https://www.google.com/recaptcha/api.js?render={{$recaptchaKey}}"></script>
@@ -86,7 +86,7 @@
   <i class="fas fa-chevron-up fa-xl"></i>
 </a>
 
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 
 @yield("scripts")
 </body>

@@ -12,7 +12,7 @@
 @section("content")
   {{--  Jumbotron --}}
   <div class="section section-jumbotron section-dark">
-    <div class="bg-jumbotron">
+    <div class="bg-jumbotron bg-homepage">
       <img src="{{asset('images/home_jumbo_bg.jpeg')}}" alt="Mamma con la figlia ed il cane, all'aperto in sicurezza.">
     </div>
 
@@ -31,13 +31,17 @@
           </p>
 
 
-          <div class="d-flex" style="gap: 2rem">
+          <div class="d-flex" style="gap: 1rem">
             <div data-aos="fade-right" data-aos-delay="300">
               <a href="{{route("contacts.index")}}" class="btn btn-outline-light outline-primary">Scrivici</a>
             </div>
             <div data-aos="fade-right" data-aos-delay="200">
               <a href="tel:+39 351 7238237" class="btn btn-primary btn-to-light">Chiama</a>
             </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="300" class="pt-3">
+            <a id="save-contact-btn" href="#" class="text-light btn btn-link btn-sm">Salva il nostro contatto</a>
           </div>
         </div>
       </div>
