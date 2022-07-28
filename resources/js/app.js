@@ -96,10 +96,13 @@ AOS.init({
   }
   
   const observer = new IntersectionObserver(([e]) => {
-    const condition = e.intersectionRatio < 1 && banner.getBoundingClientRect().bottom > 0
+    const rootBoundary= e.rootBounds;
+    const condition = e.intersectionRatio < 1 && bannerSentinel.getBoundingClientRect().bottom > rootBoundary.bottom
     banner.classList.toggle('isSticky', condition)
+  
+    console.log(e.rootBounds, e.intersectionRatio, bannerSentinel.getBoundingClientRect().bottom)
     
-    btnGoUp.style.bottom = condition ? '10rem' : '1rem'
+    btnGoUp.style.bottom = condition ? '9rem' : '1rem'
   }, { threshold: [1] })
   
   observer.observe(bannerSentinel)
