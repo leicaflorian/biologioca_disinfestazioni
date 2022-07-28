@@ -13,7 +13,7 @@
           <span>Chiamaci</span></a>
       </div>
       <div>
-        <a href="{{route('contacts.index')}}" class="btn btn-dark btn-mobile-only-icon">
+        <a href="{{route('contacts.index')}}#contacts-section" class="btn btn-dark btn-mobile-only-icon">
           <i class="fas fa-envelope me-md-2"></i>
           <span>Scrivici</span></a>
       </div>
@@ -38,7 +38,7 @@
           <span>Chiamaci</span></a>
       </div>
       <div>
-        <a href="{{route('contacts.index')}}" class="btn btn-dark btn-mobile-only-icon">
+        <a href="{{route('contacts.index')}}#contacts-section" class="btn btn-dark btn-mobile-only-icon">
           <i class="fas fa-envelope me-md-2"></i>
           <span>Scrivici</span></a>
       </div>
