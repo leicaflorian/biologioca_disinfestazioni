@@ -13,7 +13,7 @@
   {{--  Jumbotron --}}
   <div class="section section-jumbotron section-dark">
     <div class="bg-jumbotron bg-homepage">
-      <img src="{{asset('images/home_jumbo_bg.jpeg')}}" alt="Mamma con la figlia ed il cane, all'aperto in sicurezza.">
+      <img src="{{asset('images/home_jumbo_bg.jpeg')}}" alt="Mamma con la figlia ed il cane, all'aperto in sicurezza." loading="lazy">
     </div>
 
     <div class="container text-light">
@@ -95,9 +95,9 @@
           {{-- Sfondo immagini --}}
           <div class="offset-img-container ">
             <img src="{{asset('images/con_cura_1.jpeg')}}" alt="Esposizione di vari tipi di insetti"
-                 data-aos="fade-right">
+                 data-aos="fade-right" loading="lazy">
             <img src="{{asset('images/con_cura_2.jpeg')}}" alt="Analisi sotto lente di ingrandimento di uno scarafaggio"
-                 data-aos="fade-up">
+                 data-aos="fade-up" loading="lazy">
           </div>
         </div>
         <div class="col-lg-7">
