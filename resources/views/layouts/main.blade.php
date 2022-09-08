@@ -17,7 +17,7 @@
   <title>@yield("page-title")</title>
   <meta name="description" content="@yield("page-description")">
 
-  @if(env("APP_INCLUDE_GTAGS") === true)
+  {{--@if(env("APP_INCLUDE_GTAGS") === true)
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
         w[l] = w[l] || []
@@ -48,7 +48,7 @@
     </script>
 
     <!-- End Global site tag (gtag.js) -->
-  @endif
+  @endif--}}
 
   @include("components.social-media-tags")
 
@@ -65,7 +65,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700%7CRoboto+Slab:regular,500,700&display=swap" rel="stylesheet">
 
   @if(isset($recaptchaKey))
-    <script src="https://www.google.com/recaptcha/api.js?render={{$recaptchaKey}}" defer async></script>
+{{--    <script src="https://www.google.com/recaptcha/api.js?render={{$recaptchaKey}}" defer async></script>--}}
   @endif
 
   <script src="{{ mix('js/manifest.js') }}"></script>
