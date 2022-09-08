@@ -35,7 +35,7 @@
     <!-- End Google Tag Manager -->
 
     <!-- Global site tag (gtag.js) - Google Ads: 10950377080 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10950377080"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10950377080" ></script>
     <script>
       window.dataLayer = window.dataLayer || []
 
@@ -65,7 +65,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700%7CRoboto+Slab:regular,500,700&display=swap" rel="stylesheet">
 
   @if(isset($recaptchaKey))
-    <script src="https://www.google.com/recaptcha/api.js?render={{$recaptchaKey}}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={{$recaptchaKey}}" defer async></script>
   @endif
 
   <script src="{{ mix('js/manifest.js') }}"></script>
@@ -80,7 +80,7 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLVCK69"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            height="0" width="0" style="display:none;visibility:hidden" loading="lazy"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
 @endif
