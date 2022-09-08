@@ -20,10 +20,10 @@
                 info@biologicadisinfestazioni.it</a>
             </li>
             <li class="list-item-with-icon" data-aos="fade-up" data-aos-delay="200">
-              <a href="javascript:void(0)">
+              <div class="d-flex gap-3">
                 <i class="fa-solid fa-hashtag icon-rounded icon-white"></i>
                 P.Iva: 04398380248
-              </a>
+              </div>
             </li>
           </ul>
         </div>

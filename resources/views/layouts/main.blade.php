@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -56,11 +56,24 @@
 
   @yield("header_scripts")
 
+  <link rel="stylesheet" href="{{ mix('css/vendors-1.css') }}">
+  <link rel="stylesheet" href="{{ mix('css/vendors-2.css') }}">
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700%7CRoboto+Slab:regular,500,700&display=swap" rel="stylesheet">
 
   @if(isset($recaptchaKey))
     <script src="https://www.google.com/recaptcha/api.js?render={{$recaptchaKey}}"></script>
   @endif
+
+  <script src="{{ mix('js/manifest.js') }}"></script>
+  <script src="{{ mix('js/vendors-1.js') }}" defer></script>
+  <script src="{{ mix('js/vendors-2.js') }}" defer></script>
+  <script src="{{ mix('js/vendors-3.js') }}" defer></script>
+  <script src="{{ mix('js/app.js') }}" defer></script>
+
 </head>
 <body>
 @if(env("APP_INCLUDE_GTAGS") === true)
@@ -86,7 +99,6 @@
   <i class="fas fa-chevron-up fa-xl"></i>
 </a>
 
-<script src="{{ mix('js/app.js') }}"></script>
 
 @yield("scripts")
 </body>

@@ -1,16 +1,17 @@
 @extends("layouts.main")
 
-@section("page-title", $service->meta_title)
+@section("page-title", $service->meta_title ? $service->meta_title : $service->title)
 @section("page-description", strip_tags($service->meta_description))
 @section("og_type", "product")
 
 @section("content")
+
   <div class="section">
     <div class="container">
       <div class="section-jumbotron position-relative">
         <div class="bg-jumbotron bg-end-75 bg-offset-top">
           {{ $service->getFirstMedia("img_cover")("hd", [
-              "alt"=>$service->getFirstMedia("img_cover")["alt_text"],
+              "alt"=>$service->getFirstMedia("img_cover")["alt_text"] ?? $service->title,
               "class"=>"img-fluid",
               "data-aos"=>"fade-left"
             ]) }}

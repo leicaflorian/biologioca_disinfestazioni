@@ -38,7 +38,9 @@ const app = new Vue({
 })
 
 AOS.init({
-  once: true, easing: 'ease-out'
+  once: true,
+  easing: 'ease-out',
+  disable: 'phone'
 });
 
 /*setTimeout(() => {
@@ -77,6 +79,7 @@ AOS.init({
   
   btn.addEventListener('click', (e) => {
     e.preventDefault()
+    e.currentTarget.blur()
     
     window.scrollTo({
       top: 0, behavior: 'smooth'
@@ -96,10 +99,10 @@ AOS.init({
   }
   
   const observer = new IntersectionObserver(([e]) => {
-    const rootBoundary= e.rootBounds;
+    const rootBoundary = e.rootBounds
     const condition = e.intersectionRatio < 1 && bannerSentinel.getBoundingClientRect().bottom > rootBoundary.bottom
     banner.classList.toggle('isSticky', condition)
-  
+    
     console.log(e.rootBounds, e.intersectionRatio, bannerSentinel.getBoundingClientRect().bottom)
     
     btnGoUp.style.bottom = condition ? '9rem' : '1rem'
@@ -145,11 +148,11 @@ X-SOCIALPROFILE;TYPE=youtube:https://www.youtube.com/channel/UCKT3azjz_wsuc69Xi-
 REV:2022-07-27T23:35:03.065Z
 END:VCARD
 `
-  
+    
     const url = URL.createObjectURL(new Blob([vCard], { type: 'text/vcard' }))
-  
-    saveContactBtn.href = url;
-    saveContactBtn.download = "Contatto Biologica Disinfestazioni";
+    
+    saveContactBtn.href = url
+    saveContactBtn.download = 'Contatto Biologica Disinfestazioni'
   })
 })()
 

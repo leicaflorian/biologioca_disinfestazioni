@@ -9,6 +9,7 @@
 <div class="card-img-top">
   {{ $service->getFirstMedia("img_cover")("card", [
               "alt"=>$service->getFirstMedia("img_cover")["alt_text"],
+              "loading"=>"lazy"
             ]) }}
 </div>
 

@@ -9,7 +9,8 @@
           <a href="#" @click.prevent.stop="playVideo(video)"
              class="link_play"
              v-if="playingVideo !== video.video_link">
-            <img :src="video.thumb_high" :alt="video.title" class="">
+            <img :data-src="video.thumb_high" :alt="video.title" class="swiper-lazy">
+            <div class="swiper-lazy-preloader"></div>
             <div class="caption">
               {{ video.title }}
             </div>
@@ -23,8 +24,9 @@
         </div>
 
         <div class="swiper-slide" v-for="img of images" :key="img.id">
-          <img :src="img.full_hd_url" :alt="img.alt_text" class=""
-               loading="lazy">
+          <img :data-src="img.full_hd_url" :alt="img.alt_text || img.file_name"
+               loading="lazy" class="swiper-lazy">
+          <div class="swiper-lazy-preloader"></div>
           <div class="caption" v-if="img.caption">
             {{ img.caption }}
           </div>
@@ -45,13 +47,14 @@
 </template>
 
 <script>
-import { Pagination, Navigation } from 'swiper'
+import { Pagination, Navigation, Lazy } from 'swiper'
 import Swiper from 'swiper'
 
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import 'swiper/css/lazy'
 
 /*import lightGallery from 'lightgallery'
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
@@ -113,8 +116,12 @@ export default {
   mounted () {
     const swiper = new Swiper('.swiper', {
       // configure Swiper to use modules
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Lazy],
       loop: true,
+      preloadImages: false,
+      lazy: {
+        loadPrevNext: true
+      },
 
       // If we need pagination
       pagination: {
