@@ -6,5 +6,7 @@
     "/css/vendors-1.css": "/css/vendors-1.css?id=46c485d086b01f3dc97db999f3c84434",
     "/js/vendors-1.js": "/js/vendors-1.js?id=2d42b6c1cf42406281a0a2497cc7673f",
     "/js/vendors-2.js": "/js/vendors-2.js?id=afd7e1916e03bc4dae759da7205ec5ec",
-    "/js/vendors-3.js": "/js/vendors-3.js?id=cd38be73b0b91726cbeb1693066450c6"
+    "/js/vendors-3.js": "/js/vendors-3.js?id=cd38be73b0b91726cbeb1693066450c6",
+    "/js/admin.js": "/js/admin.js?id=5b882168afb57e70a68d539d18b80d07",
+    "/css/admin.css": "/css/admin.css?id=c3332079765893e915e68aad59973708"
 }

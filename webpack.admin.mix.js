@@ -1,4 +1,5 @@
 const mix = require('laravel-mix')
+require('laravel-mix-merge-manifest')
 
 /*
  |--------------------------------------------------------------------------
@@ -17,6 +18,5 @@ mix
   .sass('resources/sass/admin/admin.scss', 'public/css')
   .vue()
 
-// if (mix.inProduction()) {
 mix.version()
-// }
+  .mergeManifest()

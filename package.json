@@ -31,6 +31,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
     "aos": "^2.3.4",
+    "laravel-mix-merge-manifest": "^2.1.0",
     "lightgallery": "^2.4.0",
     "magic-grid": "^3.2.4",
     "simplebar": "^5.3.8",
