@@ -64,18 +64,33 @@
 }
 
 .go-up-btn {
-  --bs-btn-padding-x: 1.3rem;
-  --bs-btn-padding-y: 1rem;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-padding-y: .7rem;
   position: fixed;
   bottom: 1rem;
   right: 1rem;
   z-index: 10;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .3);
   background-color: white !important;
-  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, bottom .3s ease-in-out;
   transform: translateX(0);
 
   &.go-up-btn-hidden {
     transform: translateX(calc(100% + 1.5rem));
+  }
+}
+
+.btn-mobile-only-icon {
+  @include media-breakpoint-down(md) {
+    --bs-btn-padding-x: 1.5rem;
+    --bs-btn-padding-y: .5rem;
+
+    i {
+      font-size: calc(1.4rem + .5vw);
+    }
+
+    :not(i) {
+      display: none;
+    }
   }
 }

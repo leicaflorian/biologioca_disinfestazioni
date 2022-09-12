@@ -1,0 +1,32 @@
+@use "sass:map";
+@import 'variables';
+
+$fa-icons-to-include: "award", "house-circle-check", "leaf", "hourglass",
+"phone", "envelope", "whatsapp", "location-pin", "chevron-up", "hashtag";
+
+@import '@fortawesome/fontawesome-free/scss/_functions';
+@import '@fortawesome/fontawesome-free/scss/_variables';
+@import '@fortawesome/fontawesome-free/scss/_mixins';
+@import '@fortawesome/fontawesome-free/scss/_core';
+@import '@fortawesome/fontawesome-free/scss/_sizing';
+@import '@fortawesome/fontawesome-free/scss/_fixed-width';
+@import '@fortawesome/fontawesome-free/scss/_list';
+//@import '@fortawesome/fontawesome-free/scss/bordered-pulled';
+//@import '@fortawesome/fontawesome-free/scss/animated';
+//@import '@fortawesome/fontawesome-free/scss/rotated-flipped';
+@import '@fortawesome/fontawesome-free/scss/_stacked';
+
+//@import '@fortawesome/fontawesome-free/scss/_icons';
+@each $name in $fa-icons-to-include {
+  $icon: map.get($fa-icons, $name);
+
+  .#{$fa-css-prefix}-#{$name}::before {
+    content: unquote("\"#{ $icon }\"");
+  }
+}
+
+//@import '@fortawesome/fontawesome-free/scss/screen-reader';
+
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/brands';

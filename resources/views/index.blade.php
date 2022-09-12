@@ -3,11 +3,17 @@
 @section("page-title", "Disinfestazioni Veneto: affidati a Biologica Disinfestazioni")
 @section("page-description", "Proponiamo soluzioni mirate per disinfestazioni in Veneto di ogni genere, normative in materia di HACCP e Sanificazione di locali commerciali e non.")
 
+@section("header_script")
+  <script>
+    gtag('event', 'conversion', { 'send_to': 'AW-10950377080/vOVxCKaorM4DEPj8xeUo' })
+  </script>
+@endsection
+
 @section("content")
   {{--  Jumbotron --}}
   <div class="section section-jumbotron section-dark">
-    <div class="bg-jumbotron">
-      <img src="{{asset('images/home_jumbo_bg.jpeg')}}" alt="Mamma con la figlia ed il cane, all'aperto in sicurezza.">
+    <div class="bg-jumbotron bg-homepage">
+      <img src="{{asset('images/home_jumbo_bg.jpeg')}}" alt="Mamma con la figlia ed il cane, all'aperto in sicurezza." loading="lazy">
     </div>
 
     <div class="container text-light">
@@ -25,13 +31,17 @@
           </p>
 
 
-          <div class="d-flex" style="gap: 2rem">
+          <div class="d-flex" style="gap: 1rem">
             <div data-aos="fade-right" data-aos-delay="300">
               <a href="{{route("contacts.index")}}" class="btn btn-outline-light outline-primary">Scrivici</a>
             </div>
             <div data-aos="fade-right" data-aos-delay="200">
               <a href="tel:+39 351 7238237" class="btn btn-primary btn-to-light">Chiama</a>
             </div>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="300" class="pt-3">
+            <a id="save-contact-btn" href="#" class="text-light btn btn-link btn-sm">Salva il nostro contatto</a>
           </div>
         </div>
       </div>
@@ -85,9 +95,9 @@
           {{-- Sfondo immagini --}}
           <div class="offset-img-container ">
             <img src="{{asset('images/con_cura_1.jpeg')}}" alt="Esposizione di vari tipi di insetti"
-                 data-aos="fade-right">
+                 data-aos="fade-right" loading="lazy">
             <img src="{{asset('images/con_cura_2.jpeg')}}" alt="Analisi sotto lente di ingrandimento di uno scarafaggio"
-                 data-aos="fade-up">
+                 data-aos="fade-up" loading="lazy">
           </div>
         </div>
         <div class="col-lg-7">
@@ -96,12 +106,12 @@
           </h2>
 
           <p class="lead mb-5" data-aos="fade-right" data-aos-delay="100">
-            Il nostro non é solo un lavoro ma prima di tutto una passione: grazie al nostro impegno nel realizzare
+            Il nostro non é solo un lavoro ma prima di tutto una passione: grazie al nostro impegno nel effettuare
             <strong>disinfestazioni in Veneto</strong> abbiamo aiutato decine di committenti a liberarsi da insetti,
             roditori e parassiti
             indesiderati, <strong>rendendo il nostro territorio un posto più sicuro</strong>. Il nostro impegno va in
             favore di famiglie,
-            professionisti ed aziende produttrici per dare serenità quotidiana a chi vive le città.
+            professionisti ed aziende produttrici per dare serenità quotidiana e sicurezza a chi vive le città.
           </p>
 
           <x-company-principles :compact="true"></x-company-principles>

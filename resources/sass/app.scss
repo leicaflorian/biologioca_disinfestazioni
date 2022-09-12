@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700%7CRoboto+Slab:regular,500,700');
-
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-@import "@fortawesome/fontawesome-free/css/all.css";
 @import "aos/dist/aos.css";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
 
 @import "./css_variables";
 @import "./partials/generic";
@@ -20,3 +17,8 @@
 @import "./partials/footer";
 @import "./partials/forms";
 @import "./partials/slider";
+@import "./partials/banners";
+
+.grecaptcha-badge {
+  display: none !important;
+}

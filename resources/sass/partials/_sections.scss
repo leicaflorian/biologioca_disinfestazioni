@@ -38,6 +38,25 @@
         margin-bottom: -5rem;
       }
     }
+
+    &.bg-homepage {
+      @include media-breakpoint-down(md) {
+        img {
+          object-position: 60% 0;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(90deg, #164336 -20%, rgba(0, 0, 0, 0) 100%);
+          z-index: 0;
+        }
+      }
+    }
   }
 
   .container {
