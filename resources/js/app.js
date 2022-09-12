@@ -125,6 +125,7 @@ AOS.init({
    })*/
 })();
 
+// V card download
 (function () {
   const saveContactBtn = document.getElementById('save-contact-btn')
   
@@ -154,5 +155,4 @@ END:VCARD
     saveContactBtn.href = url
     saveContactBtn.download = 'Contatto Biologica Disinfestazioni'
   })
-})()
-
+})();

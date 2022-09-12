@@ -18,6 +18,7 @@ Route::get('/servizi/{service}', [\App\Http\Controllers\ServiceController::class
 Route::get('/contatti', [\App\Http\Controllers\ContactController::class, 'index'])->name('contacts.index');
 Route::post('/contatti', [\App\Http\Controllers\ContactController::class, 'store'])->name('contacts.store');
 Route::get('/sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'index']);
+Route::get('/test-reviews', [\App\Http\Controllers\SitemapController::class, 'test']);
 /*Route::get('/mailable', function () {
   $invoice = App\Models\Contact::find(3);
   

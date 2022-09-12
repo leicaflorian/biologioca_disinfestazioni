@@ -7,9 +7,13 @@
   <script>
     gtag('event', 'conversion', { 'send_to': 'AW-10950377080/vOVxCKaorM4DEPj8xeUo' })
   </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=[(API_KEY)]"></script>
 @endsection
 
 @section("content")
+  <div id="google-reviews"></div>
+
   {{--  Jumbotron --}}
   <div class="section section-jumbotron section-dark">
     <div class="bg-jumbotron bg-homepage">
