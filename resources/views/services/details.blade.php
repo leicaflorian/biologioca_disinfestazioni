@@ -44,11 +44,11 @@
     @php
       function sortByOrder($data): \Illuminate\Support\Collection{
         return $data->sort(function($a, $b) {
-          if(!$a["order"]) {
+          if(is_null($a["order"])) {
             $a["order"] = 9999;
           }
 
-          if (!$b["order"]) {
+          if (is_null($b["order"])) {
             $b["order"] = 9999;
           }
 
