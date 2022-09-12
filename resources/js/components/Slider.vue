@@ -5,7 +5,7 @@
       <div class="swiper-wrapper">
         <!-- Slides -->
         <div v-for="video of videos" class="yt-video swiper-slide"
-             :key="video.id">
+             :key="video.id" :data-order="video.order">
           <a href="#" @click.prevent.stop="playVideo(video)"
              class="link_play"
              v-if="playingVideo !== video.video_link">
@@ -23,7 +23,8 @@
                   allowfullscreen autoplay></iframe>
         </div>
 
-        <div class="swiper-slide" v-for="img of images" :key="img.id">
+        <div class="swiper-slide" v-for="img of images" :key="img.id"
+             :data-order="img.order">
           <img :data-src="img.full_hd_url" :alt="img.alt_text || img.file_name"
                loading="lazy" class="swiper-lazy">
           <div class="swiper-lazy-preloader"></div>

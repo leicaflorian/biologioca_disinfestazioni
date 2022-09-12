@@ -42,18 +42,40 @@
 
   <div class="section py-0">
     @php
-      $gallery = [];
+      function sortByOrder($data): \Illuminate\Support\Collection{
+        return $data->sort(function($a, $b) {
+          if(is_null($a["order"])) {
+            $a["order"] = 9999;
+          }
 
-      foreach ($service->getMedia("gallery") as $media) {
+          if (is_null($b["order"])) {
+            $b["order"] = 9999;
+          }
+
+          if($a["order"] === $b["order"] ){
+            return 0;
+          }
+
+          return $a["order"] > $b["order"] ? 1 : -1 ;
+        });
+      }
+
+      $gallery = [];
+      $images =sortByOrder($service->getMedia("gallery"));
+
+      foreach ($images as $media) {
         $gallery[] =array_merge($media->toArray(), [
             "full_hd_url"=>$media->getFullUrl("full-hd"),
           ]);
       }
 
-      $videos = $service->videos->toArray();
+//      dd(sortByOrder($service->videos)->toArray());
+//      dd(json_encode(sortByOrder($service->videos), JSON_PRETTY_PRINT));
+      $videos = sortByOrder($service->videos)->values();
     @endphp
 
-    <slider :slides-per-view='"auto"' :images="{{json_encode($gallery)}}"
+    <slider :slides-per-view='"auto"'
+            :images="{{json_encode($gallery)}}"
             :videos="{{json_encode($videos)}}"></slider>
 
   </div>

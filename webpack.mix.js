@@ -1,4 +1,5 @@
 const mix = require('laravel-mix')
+require('laravel-mix-merge-manifest')
 
 /*
  |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ mix.sass('resources/sass/bootstrap.scss', 'public/css/vendors-1.css')
 mix.sass('resources/sass/icons.scss', 'public/css/vendors-2.css')
 
 mix.version()
+  .mergeManifest()
