@@ -56,9 +56,9 @@
 
   @yield("header_scripts")
 
-  <link rel="stylesheet" href="{{ mix('css/vendors-1.css') }}">
-  <link rel="stylesheet" href="{{ mix('css/vendors-2.css') }}">
-  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  <link rel="stylesheet" href="{{ mix('/css/vendors-1.css') }}">
+  <link rel="stylesheet" href="{{ mix('/css/vendors-2.css') }}">
+  <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

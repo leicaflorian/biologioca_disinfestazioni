@@ -33,6 +33,7 @@
     }],
     "url": "{{ env("APP_URL") }}"
   }
+
 </script>
 
 <script type="application/ld+json">
@@ -42,21 +43,25 @@
     "url": "{{ env("APP_URL") }}",
     "logo": "{{ asset("images/logo.svg") }}"
   }
+
 </script>
 
-<script type="application/ld+json">
+@if(isset($serviceEntries))
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "itemListElement": [
     @foreach ($serviceEntries as $service)
-    {
-          "@type": "ListItem",
-          "position": {{$loop->index +1}},
+      {
+            "@type": "ListItem",
+            "position": {{$loop->index +1}},
             "url": "{{env("APP_URL") . ("/servizi/" . $service->slug )}}"
           }{{ $loop->last ? '' : ',' }}
-  @endforeach
+    @endforeach
 
-  ]
-}
-</script>
+    ]
+  }
+
+  </script>
+@endif

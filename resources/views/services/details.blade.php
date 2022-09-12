@@ -50,7 +50,10 @@
           ]);
       }
 
-      $videos = $service->videos->toArray();
+      $videos = $service->videos->sortBy([
+        ["order", "asc"],
+        ["created_at", "asc"]
+        ])->toArray();
     @endphp
 
     <slider :slides-per-view='"auto"' :images="{{json_encode($gallery)}}"
